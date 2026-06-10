@@ -84,7 +84,7 @@ export default function GalleryHero() {
                   muted
                   playsInline
                   preload="metadata"
-                  src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mp4#t=0.1"
+                  src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mov"
                 />
 
                 {/* Dark overlay */}
@@ -161,12 +161,12 @@ export default function GalleryHero() {
               <div className="rounded-2xl overflow-hidden bg-[#111] shadow-2xl">
                 <video
                   autoPlay
-                  controls
+                  muted
                   playsInline
                   className="w-full max-h-[75vh]"
-                  src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mp4"
+                  src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mov"
                 >
-                  <source src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mp4" type="video/mp4" />
+                  <source src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mov" type="video/mp4" />
                   <source src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mov" type="video/quicktime" />
                 </video>
                 <div className="px-6 py-4 flex items-center justify-between">

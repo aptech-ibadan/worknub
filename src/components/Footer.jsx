@@ -190,7 +190,7 @@ export default function Footer() {
             © 2026 Worknub. All rights reserved. No.1 Co-working Space in Ibadan.
           </p>
           <div className="flex items-center gap-2 sm:gap-4 text-[11px] sm:text-xs text-gray-600 text-center sm:text-left">
-            <span>Follow us on</span>
+            <span>Follow us </span>
             <a
               href="https://instagram.com/theworknub"
               target="_blank"
