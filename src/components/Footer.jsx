@@ -10,7 +10,7 @@ const quickLinks = [
   { name: 'Spaces',     path: '/spaces' },
   { name: 'Pricing',    path: '/pricing' },
   { name: 'Gallery',    path: '/gallery' },
-  { name: 'Blogs',      path: '/blogs' },
+  { name: 'Blog',      path: '/blogs' },
 ];
 
 const supportLinks = [
