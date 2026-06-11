@@ -38,7 +38,7 @@ export default function PricingCard({ plan, isPopular = false }) {
       {/* Price */}
       <div className="px-7 pb-6 border-b border-gray-100">
         <div className="flex items-baseline gap-1">
-          <span className="text-gray-400 text-lg font-semibold">₦</span>
+          <span className=" text-lg font-semibold">₦</span>
           <span className={`text-4xl font-black tracking-[-0.03em] ${isPopular ? 'text-worknub-orange' : 'text-worknub-green'}`}>
             {plan.price}
           </span>

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FiMapPin, FiPhone, FiMail, FiFacebook, FiTwitter, FiInstagram, FiLinkedin, FiArrowRight } from 'react-icons/fi';
+import { SiTiktok } from 'react-icons/si';
 
 const quickLinks = [
   { name: 'Home',       path: '/' },
@@ -20,11 +21,11 @@ const supportLinks = [
 ];
 
 const socials = [
-  { icon: FiFacebook,  href: 'https://www.instagram.com/theworknub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', label: 'Facebook' },
+  { icon: FiFacebook,  href: 'https://www.facebook.com/theworknub', label: 'Facebook' },
   { icon: FiTwitter,   href: 'https://x.com/theworknub?s=21', label: 'Twitter' },
-  { icon: FiInstagram, href: 'https://www.instagram.com/theworknub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', label: 'Instagram' },
+  { icon: FiInstagram, href: 'https://www.instagram.com/theworknub', label: 'Instagram' },
+  { icon: SiTiktok,    href: 'https://www.tiktok.com/@theworknub', label: 'TikTok' },
   { icon: FiLinkedin,  href: 'https://www.linkedin.com/in/theworknub/', label: 'LinkedIn' },
-  // { icon: FiTikT,  href: 'https://www.linkedin.com/in/theworknub/', label: 'LinkedIn' },
 ];
 
 export default function Footer() {
@@ -101,6 +102,8 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-8 sm:w-9 h-8 sm:h-9 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-gray-400 hover:bg-worknub-green hover:text-white hover:border-worknub-green transition-all duration-200"
                 >

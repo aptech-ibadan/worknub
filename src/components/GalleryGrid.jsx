@@ -108,7 +108,8 @@ export default function GalleryGrid() {
                 key={image.id}
                 layout
                 initial={{ opacity: 0, y: 24, scale: 0.97 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.45, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => openImage(index)}
                 className="relative group cursor-pointer overflow-hidden rounded-2xl bg-gray-100"

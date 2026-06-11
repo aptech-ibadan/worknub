@@ -40,8 +40,9 @@ export default function Pricing() {
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
           >
             <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-worknub-dark mb-3 sm:mb-4">Simple, Transparent Pricing</h1>
             <p className="text-[0.95rem] sm:text-xl text-gray-600 max-w-2xl mx-auto">
@@ -52,7 +53,7 @@ export default function Pricing() {
       </section>
 
       {/* Member/Non-Member Toggle */}
-      <section className="py-6 sm:py-8 bg-white border-b">
+      <section className="py-6 sm:py-8 bg-white ">
         <div className="container-custom">
           <div className="flex flex-row items-center justify-center gap-2 sm:gap-4 w-full max-w-[560px] mx-auto">
             <button

@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import {
@@ -71,9 +72,24 @@ const eligibility = [
   "OR refer a client who books at least a one-month package",
 ];
 
+const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+
 export default function Membership() {
+  // Fix body scroll on mobile - prevent any overflow issues
+  useEffect(() => {
+    document.body.style.overflow = 'auto';
+    document.body.style.position = 'relative';
+    document.documentElement.style.overflow = 'auto';
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+      document.body.style.position = '';
+      document.documentElement.style.overflow = 'auto';
+    };
+  }, []);
+
   return (
-    <>
+    <div className="overflow-x-hidden">
       {/* ── HERO ── */}
       <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 bg-white overflow-hidden">
         {/* Dot grid */}
@@ -87,14 +103,15 @@ export default function Membership() {
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(245,124,0,0.06) 0%, transparent 65%)', transform: 'translate(-20%,30%)' }} />
 
-        <div className="container-custom relative">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 relative">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
             {/* LEFT */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true }}
             >
               <div className="flex items-center gap-2.5 mb-3 sm:mb-5">
                 <span className="w-7 h-0.5 bg-worknub-green rounded-sm inline-block" />
@@ -118,14 +135,14 @@ export default function Membership() {
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-2 sm:gap-3">
+              <div className="flex flex-wrap gap-3">
                 <Link href="/contact"
-                  className="inline-flex items-center gap-2 bg-worknub-green text-white px-6 sm:px-4 py-3 sm:py-4 rounded-xl font-black text-[13px] sm:text-sm hover:bg-[#43a047] transition-colors"
+                  className="inline-flex items-center gap-2 bg-worknub-green text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-black text-[13px] sm:text-sm hover:bg-[#43a047] transition-all hover:scale-105"
                   style={{ boxShadow: '0 8px 28px rgba(76,175,80,0.35)' }}>
                   Become a Member <FiArrowRight size={15} />
                 </Link>
                 <Link href="/pricing"
-                  className="inline-flex items-center gap-2 border border-worknub-dark/20 text-worknub-dark px-6 sm:px-4 py-3 sm:py-4 rounded-xl font-bold text-[13px] sm:text-sm hover:bg-gray-50 transition-colors">
+                  className="inline-flex items-center gap-2 border border-worknub-dark/20 text-worknub-dark px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-[13px] sm:text-sm hover:bg-gray-50 transition-all hover:scale-105">
                   View Pricing
                 </Link>
               </div>
@@ -134,8 +151,9 @@ export default function Membership() {
             {/* RIGHT — member card visual */}
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true }}
               className="hidden lg:block"
             >
               {/* Membership card */}
@@ -157,7 +175,7 @@ export default function Membership() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                       </svg>
                     </div>
-                    <span className="text-white font-extrabold text-lg tracking-[-0.01em] font-poppins">Work<span className="text-worknub-green">nub</span></span>
+                    <span className="text-white font-extrabold text-lg tracking-[-0.01em]">Work<span className="text-worknub-green">nub</span></span>
                   </div>
                   <span className="text-[10px] font-black tracking-[0.1em] uppercase text-worknub-green bg-worknub-green/10 border border-worknub-green/25 px-3 py-1.5 rounded-full">
                     Member
@@ -196,7 +214,7 @@ export default function Membership() {
 
       {/* ── BENEFITS ── */}
       <section className="py-24 bg-gray-50/60">
-        <div className="container-custom">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
           <div className="mb-12">
             <div className="flex items-center gap-2.5 mb-3">
               <span className="w-7 h-0.5 bg-worknub-green rounded-sm inline-block" />
@@ -216,7 +234,7 @@ export default function Membership() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
-                className={`bg-white rounded-2xl border ${b.border} p-6 hover:shadow-lg transition-shadow duration-300`}
+                className={`bg-white rounded-2xl border ${b.border} p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
               >
                 <div className={`w-12 h-12 ${b.bg} border ${b.border} rounded-xl flex items-center justify-center mb-4`}>
                   <b.icon size={22} className={b.accent} />
@@ -238,7 +256,7 @@ export default function Membership() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
           style={{ width: 800, height: 800, background: 'radial-gradient(circle, rgba(76,175,80,0.05) 0%, transparent 60%)' }} />
 
-        <div className="container-custom relative">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 relative">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-2.5 mb-4">
               <span className="w-7 h-0.5 bg-worknub-green rounded-sm inline-block" />
@@ -309,21 +327,19 @@ export default function Membership() {
             </div>
           </motion.div>
            
-           <div className='flex mt-6 justify-center '>       
-           <Link href="/contact"
-                  className="flex  w-40 text-nowrap items-center justify-center gap-2 
-                   bg-worknub-green text-white px-8 py-4 rounded-xl
-                    font-black text-sm hover:bg-[#43a047] transition-colors"
-                  style={{ boxShadow: '0 8px 28px rgba(76,175,80,0.4)' }}>
-                  Get Started <FiArrowRight size={15} />
+          <div className='flex mt-6 justify-center'>       
+            <Link href="/contact"
+              className="flex w-48 text-nowrap items-center justify-center gap-2 bg-worknub-green text-white px-8 py-4 rounded-xl font-black text-sm hover:bg-[#43a047] transition-all hover:scale-105"
+              style={{ boxShadow: '0 8px 28px rgba(76,175,80,0.4)' }}>
+              Get Started <FiArrowRight size={15} />
             </Link>
-            </div>
+          </div>
         </div>
       </section>
 
       {/* ── ELIGIBILITY + CTA ── */}
       <section className="py-24 bg-white">
-        <div className="container-custom">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid md:grid-cols-2 gap-8 items-start">
 
             {/* Eligibility */}
@@ -342,7 +358,7 @@ export default function Membership() {
               </h2>
               <div className="space-y-3">
                 {eligibility.map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 bg-worknub-mint border border-worknub-green/20 rounded-xl px-5 py-4">
+                  <div key={i} className="flex items-start gap-4 bg-worknub-mint border border-worknub-green/20 rounded-xl px-5 py-4 hover:shadow-md transition-shadow">
                     <span className="w-6 h-6 bg-worknub-green rounded-full flex items-center justify-center shrink-0 mt-0.5"
                       style={{ boxShadow: '0 3px 10px rgba(76,175,80,0.35)' }}>
                       <FiCheck size={11} className="text-white" strokeWidth={3} />
@@ -366,7 +382,7 @@ export default function Membership() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.55, delay: 0.1 }}
               viewport={{ once: true }}
-              className="relative bg-[#0c1a12] rounded-3xl p-10 overflow-hidden"
+              className="relative bg-[#0c1a12] rounded-3xl p-8 sm:p-10 overflow-hidden"
               style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.12)' }}
             >
               {/* Glows */}
@@ -404,7 +420,7 @@ export default function Membership() {
                 </div>
 
                 <Link href="/contact"
-                  className="flex items-center justify-center gap-2 bg-worknub-green text-white px-8 py-4 rounded-xl font-black text-sm hover:bg-[#43a047] transition-colors"
+                  className="flex items-center justify-center gap-2 bg-worknub-green text-white px-8 py-4 rounded-xl font-black text-sm hover:bg-[#43a047] transition-all hover:scale-105"
                   style={{ boxShadow: '0 8px 28px rgba(76,175,80,0.4)' }}>
                   Get Started <FiArrowRight size={15} />
                 </Link>
@@ -413,6 +429,6 @@ export default function Membership() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

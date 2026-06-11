@@ -75,8 +75,9 @@ export default function Blogs() {
         <div className="container-custom relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true }}
             className="text-center max-w-2xl mx-auto"
           >
             <div className="flex items-center justify-center gap-2.5 mb-5">
@@ -95,8 +96,9 @@ export default function Blogs() {
             {/* Inline stats row */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8 sm:mt-10 pt-8 border-t border-gray-100"
             >
               {[

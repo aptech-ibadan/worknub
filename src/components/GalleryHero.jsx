@@ -32,8 +32,9 @@ export default function GalleryHero() {
             {/* LEFT — copy */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true }}
             >
               <div className="flex items-center gap-2.5 mb-4 sm:mb-5">
                 <span className="w-7 h-0.5 bg-worknub-green rounded-sm inline-block" />
@@ -69,8 +70,9 @@ export default function GalleryHero() {
             {/* RIGHT — video thumbnail + play button */}
             <motion.div
               initial={{ opacity: 0, scale: 0.94 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.65, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true }}
               className="block"
             >
               <div

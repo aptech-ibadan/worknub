@@ -11,7 +11,7 @@ const spaces = [
     name: "Hot Desk",
     description: "Flexible workspace in our shared area. Perfect for freelancers and remote workers who want energy, community, and zero commitment.",
     icon: FiUsers,
-    features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities" ],
+    features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities"],
     price: "₦5,700",
     period: "/ day",
     popular: true,
@@ -26,7 +26,7 @@ const spaces = [
     name: "Private Desk",
     description: "Your own dedicated desk in our quiet zone. Keep your equipment securely and build a routine in a space that's truly yours.",
     icon: FiUser,
-    features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities","Dedicated desk + storage", "Priority support"],
+    features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities", "Dedicated desk + storage", "Priority support"],
     price: "₦8,900",
     period: "/ day",
     popular: false,
@@ -41,7 +41,7 @@ const spaces = [
     name: "Private Office",
     description: "Fully private office space for your team. A command centre for startups and growing businesses that need focus and identity.",
     icon: FiBriefcase,
-    features: ["Private lockable office", "Seats up to 3 people", "Business address","Flexible daily access", "High-speed WiFi","Lounge Access", "Complimentary Coffee"],
+    features: ["Private lockable office", "Seats up to 3 people", "Business address", "Flexible daily access", "High-speed WiFi", "Lounge Access", "Complimentary Coffee"],
     price: "₦32,300",
     period: " /day",
     popular: true,
@@ -71,7 +71,7 @@ const spaces = [
     name: "Event Space",
     description: "Host workshops, seminars, and networking events in our versatile venue. Ibadan's most exciting professional gathering spot.",
     icon: FiCalendar,
-    features: ["Stage & sound system", "Seating for 50+", "Catering available", "Event support", "30%  subsequent hour discount"],
+    features: ["Stage & sound system", "Seating for 50+", "Catering available", "Event support", "30% subsequent hour discount"],
     price: "₦ 91,900",
     period: "/ 1st hr",
     popular: false,
@@ -120,25 +120,16 @@ function FeaturedCard({ space, index }) {
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           style={{ position: 'absolute', inset: 0 }}
         />
-
-        {/* Base gradient — always visible */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-        {/* Hover overlay — slides up */}
         <div className="absolute inset-0 flex flex-col justify-end p-8 translate-y-0">
-          {/* Tag */}
           <span className={`inline-block text-[11px] font-bold tracking-[0.1em] uppercase px-3 py-1.5 rounded-full mb-4 w-fit ${space.tagBg}`}>
             {space.tag}
           </span>
-
-          {/* Name + price always visible at bottom */}
           <h3 className="text-white text-2xl font-extrabold tracking-[-0.02em] mb-1">{space.name}</h3>
           <div className="flex items-baseline gap-1">
             <span className="text-white text-xl font-black">{space.price}</span>
             <span className="text-white/60 text-sm">{space.period}</span>
           </div>
-
-          {/* Hover-only: features slide up */}
           <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-500 ease-out">
             <ul className="mt-4 space-y-2">
               {space.features.map((f, i) => (
@@ -176,7 +167,6 @@ function FeaturedCard({ space, index }) {
             ))}
           </ul>
         </div>
-
         <div className="flex flex-col gap-3">
           <div className="flex items-baseline gap-1 mb-2">
             <span className={`text-3xl font-black tracking-[-0.03em] ${space.accentClass}`}>{space.price}</span>
@@ -185,9 +175,7 @@ function FeaturedCard({ space, index }) {
           <Link
             href="/pricing"
             className={`flex items-center justify-center gap-2 py-3 md:py-3.5 px-5 md:px-6 rounded-xl font-bold text-sm transition-all duration-300 hover:gap-3 ${
-              space.popular
-                ? 'bg-worknub-green text-white hover:bg-[#3aad35]'
-                : 'bg-worknub-dark text-white hover:opacity-90'
+              space.popular ? 'bg-worknub-green text-white hover:bg-[#3aad35]' : 'bg-worknub-dark text-white hover:opacity-90'
             }`}
           >
             Book This Space <FiArrowRight size={15} />
@@ -213,38 +201,28 @@ function SmallCard({ space, index }) {
       viewport={{ once: true }}
       className="col-span-1 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col group"
     >
-      {/* Image */}
       <div className="relative overflow-hidden h-40 md:h-52 shrink-0">
         <img
           src={space.image}
           alt={space.name}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
-        {/* Always-on bottom gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-        {/* Tag badge */}
         <span className={`absolute top-4 left-4 text-[11px] font-bold tracking-[0.06em] uppercase px-2.5 py-1 rounded-lg ${space.tagBg}`}>
           {space.tag}
         </span>
-
-        {/* Hover overlay — quick-view info */}
         <div className="absolute inset-0 bg-worknub-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 px-6">
           <p className="text-white font-extrabold text-lg text-center tracking-[-0.01em]">{space.name}</p>
           <div className="flex items-baseline gap-1">
             <span className="text-white text-2xl font-black">{space.price}</span>
             <span className="text-white/60 text-sm">{space.period}</span>
           </div>
-          <Link
-            href="/pricing"
-            className="mt-2 inline-flex items-center gap-1.5 bg-worknub-green text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-[#3aad35] transition-colors"
-          >
+          <Link href="/pricing" className="mt-2 inline-flex items-center gap-1.5 bg-worknub-green text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-[#3aad35] transition-colors">
             Book Now <FiArrowRight size={13} />
           </Link>
         </div>
       </div>
 
-      {/* Content */}
       <div className="p-4 md:p-6 flex flex-col flex-1">
         <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
           <div className={`w-9 md:w-10 h-9 md:h-10 rounded-xl flex items-center justify-center ${space.accentBg}`}>
@@ -252,9 +230,7 @@ function SmallCard({ space, index }) {
           </div>
           <h3 className="text-[15px] md:text-[17px] font-extrabold text-worknub-dark tracking-[-0.01em]">{space.name}</h3>
         </div>
-
         <p className="text-gray-500 text-[12px] md:text-[13px] leading-[1.7] mb-4 md:mb-5 flex-1">{space.description}</p>
-
         <ul className="space-y-1.5 md:space-y-2 mb-4 md:mb-5">
           {space.features.map((f, i) => (
             <li key={i} className="flex items-center gap-2 text-gray-600 text-[11.5px] md:text-[12.5px]">
@@ -265,16 +241,12 @@ function SmallCard({ space, index }) {
             </li>
           ))}
         </ul>
-
         <div className="pt-3 md:pt-4 border-t border-gray-100 flex items-center justify-between">
           <div className="flex items-baseline gap-1">
             <span className={`text-lg md:text-xl font-black tracking-[-0.02em] ${space.accentClass}`}>{space.price}</span>
             <span className="text-gray-400 text-[10px] md:text-xs">{space.period}</span>
           </div>
-          <Link
-            href="/pricing"
-            className="inline-flex items-center gap-1.5 bg-worknub-dark text-white px-3 md:px-4 py-2 md:py-2.5 rounded-xl font-bold text-[11px] md:text-xs hover:opacity-90 transition-opacity"
-          >
+          <Link href="/pricing" className="inline-flex items-center gap-1.5 bg-worknub-dark text-white px-3 md:px-4 py-2 md:py-2.5 rounded-xl font-bold text-[11px] md:text-xs hover:opacity-90 transition-opacity">
             Book Now <FiArrowRight size={12} />
           </Link>
         </div>
@@ -296,17 +268,32 @@ export default function Spaces() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 bg-white overflow-hidden relative">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 relative overflow-hidden">
+
+        {/* Cloudinary background image */}
         <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(circle, #2D2D2D 1px, transparent 1px)', backgroundSize: '28px 28px' }}
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url(https://res.cloudinary.com/ddldviftf/image/upload/v1781088299/Untitled-1_tuqrgv.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        {/* White overlay — keeps text crisp */}
+        <div className="absolute inset-0 bg-white/82 pointer-events-none" />
+        {/* Vignette */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "radial-gradient(ellipse at center, transparent 50%, rgba(255,255,255,0.5) 100%)" }}
         />
 
-        <div className="container-custom relative">
+        <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true }}
             className="max-w-3xl"
           >
             <div className="flex items-center gap-2.5 mb-3 sm:mb-5">
@@ -340,13 +327,14 @@ export default function Spaces() {
           {/* Floating price chips */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
             className="absolute right-0 top-8 hidden lg:flex flex-col gap-3"
           >
             {[
-              { label: "Hot Desk",       price: "₦5,700 /day",   color: "text-worknub-green" },
-              { label: "Private Office", price: "₦32,300 /day",  color: "text-worknub-orange" },
+              { label: "Hot Desk",       price: "₦5,700 /day",  color: "text-worknub-green" },
+              { label: "Private Office", price: "₦32,300 /day", color: "text-worknub-orange" },
               { label: "Meeting Room",   price: "₦38,700/hr",   color: "text-worknub-teal" },
             ].map(({ label, price, color }) => (
               <div key={label} className="flex items-center gap-3 bg-white border border-gray-100 shadow-md rounded-2xl px-5 py-3">
@@ -384,7 +372,6 @@ export default function Spaces() {
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-worknub-green/[0.07] rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none" />
             <div className="absolute bottom-0 left-20 w-40 h-40 bg-worknub-orange/[0.06] rounded-full translate-y-1/2 pointer-events-none" />
-
             <div className="relative">
               <p className="text-worknub-green text-xs font-bold tracking-[0.12em] uppercase mb-3">Can't Decide?</p>
               <h2 className="text-white text-3xl md:text-4xl font-extrabold tracking-[-0.02em] leading-tight mb-3">
@@ -394,7 +381,6 @@ export default function Spaces() {
                 Book a free tour and walk through every space. No pressure, no commitment — just see if Worknub fits your work style.
               </p>
             </div>
-
             <div className="relative flex flex-col gap-3 shrink-0">
               <Link href="/gallery" className="inline-flex items-center gap-2 bg-worknub-green text-white px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-[#3aad35] transition-colors">
                 View Gallery <FiArrowRight size={15} />

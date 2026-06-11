@@ -17,7 +17,7 @@ export const heroSlides = [
       label: "Hot Desk",
       tag: "Available Today",
       tagColor: "text-worknub-green bg-worknub-green/10",
-      stat: "12",
+      stat: "1",
       statLabel: "Great spaces for you",
       rows: [
         { label: "Daily",   value: "₦3,800",  color: "text-worknub-green" },
@@ -46,7 +46,7 @@ export const heroSlides = [
       label: "Private Desk",
       tag: "Your Own Space",
       tagColor: "text-worknub-orange bg-worknub-orange/10",
-      stat: "8",
+      stat: "2",
       statLabel: "Dedicated package",
       rows: [
         { label: "Daily",   value: "₦6,000",   color: "text-worknub-orange" },
