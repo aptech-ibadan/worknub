@@ -16,7 +16,7 @@ const quickLinks = [
 const supportLinks = [
   { name: 'Membership',    path: '/membership' },
   { name: 'Student Offer', path: '/offer' },
-  { name: 'FAQ',           path: '/faq' },
+  { name: 'FAQ',           path: '/contact' },
   { name: 'Contact Us',    path: '/contact' },
 ];
 

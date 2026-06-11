@@ -57,6 +57,7 @@ export default function Blogs() {
   function handleSubscribe(e) {
     e.preventDefault();
     if (email) setSubscribed(true);
+  
   }
 
   return (
@@ -239,9 +240,10 @@ export default function Blogs() {
                         className="px-5 py-3.5 rounded-xl text-worknub-dark text-sm font-medium bg-white border-0 outline-none focus:ring-2 focus:ring-worknub-green/40 w-full sm:w-72 placeholder-gray-400"
                       />
                       <button
-                        type="submit"
+                        type="submit"                 
                         className="inline-flex items-center justify-center gap-2 bg-worknub-orange text-white px-6 py-3.5 rounded-xl font-black text-sm hover:bg-[#ef6c00] transition-colors whitespace-nowrap shrink-0"
                         style={{ boxShadow: '0 6px 20px rgba(245,124,0,0.35)' }}
+                        disabled
                       >
                         Subscribe <FiArrowRight size={14} />
                       </button>

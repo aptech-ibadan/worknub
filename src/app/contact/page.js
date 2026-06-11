@@ -406,6 +406,7 @@ export default function Contact() {
                     className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-worknub-green transition-colors text-sm"
                   />
                   <button
+                  disabled
                     onClick={() => { if (newsEmail) { alert('Subscribed!'); setNewsEmail(''); } }}
                     className="bg-worknub-green text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#3aad35] transition-colors whitespace-nowrap">
                     Subscribe
@@ -418,7 +419,7 @@ export default function Contact() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20">
+      <section id='faq' className="py-20">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
