@@ -6,27 +6,27 @@ import { useState } from 'react';
 
 const hotDeskPlans = {
   member: [
-    { name: "Daily", price: "3,800", period: "day", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities" ] },
-    { name: "Weekly", price: "18,900", period: "week", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities" ]},
-    { name: "Monthly", price: "75,300", period: "month", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities" ] },
+    { name: "Daily", price: "3,800", period: "day", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities"] },
+    { name: "Weekly", price: "18,900", period: "week", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities"] },
+    { name: "Monthly", price: "75,300", period: "month", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities"] },
   ],
   nonMember: [
-    { name: "Daily", price: "5,700", period: "day", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities" ]},
-    { name: "Weekly", price: "28,300", period: "week", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities" ] },
-    { name: "Monthly", price: "112,900", period: "month", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities" ]},
+    { name: "Daily", price: "5,700", period: "day", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities"] },
+    { name: "Weekly", price: "28,300", period: "week", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities"] },
+    { name: "Monthly", price: "112,900", period: "month", features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities"] },
   ],
 };
 
 const privateDeskPlans = {
   member: [
-    { name: "Daily", price: "6,000", period: "day", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities","Dedicated desk + storage", "Priority support"]},
-    { name: "Weekly", price: "29,600", period: "week", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities","Dedicated desk + storage", "Priority support"]},
-    { name: "Monthly", price: "118,300", period: "month", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities","Dedicated desk + storage", "Priority support"] },
+    { name: "Daily", price: "6,000", period: "day", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities", "Dedicated desk + storage", "Priority support"] },
+    { name: "Weekly", price: "29,600", period: "week", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities", "Dedicated desk + storage", "Priority support"] },
+    { name: "Monthly", price: "118,300", period: "month", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities", "Dedicated desk + storage", "Priority support"] },
   ],
   nonMember: [
-    { name: "Daily", price: "8,900", period: "day", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities","Dedicated desk + storage", "Priority support"] },
-    { name: "Weekly", price: "44,400", period: "week", features:["Flexible daily access", "High-speed WiFi", "Networking opportunities","Dedicated desk + storage", "Priority support"] },
-    { name: "Monthly", price: "177,500", period: "month", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities","Dedicated desk + storage", "Priority support"]},
+    { name: "Daily", price: "8,900", period: "day", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities", "Dedicated desk + storage", "Priority support"] },
+    { name: "Weekly", price: "44,400", period: "week", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities", "Dedicated desk + storage", "Priority support"] },
+    { name: "Monthly", price: "177,500", period: "month", features: ["Flexible daily access", "High-speed WiFi", "Networking opportunities", "Dedicated desk + storage", "Priority support"] },
   ],
 };
 
@@ -36,22 +36,42 @@ export default function Pricing() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-24 sm:pt-32 pb-12 sm:pb-16 bg-worknub-mint">
-        <div className="container-custom text-center">
+      {/* Hero Section */}
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 bg-worknub-mint">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url(https://res.cloudinary.com/ddldviftf/image/upload/v1781088299/Untitled-1_tuqrgv.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        {/* Mint overlay */}
+        <div className="absolute inset-0 z-[1] bg-worknub-mint/70 pointer-events-none" />
+        {/* Vignette */}
+        <div
+          className="absolute inset-0 z-[1] pointer-events-none"
+          style={{ background: "radial-gradient(ellipse at center, transparent 50%, rgba(240,249,240,0.5) 100%)" }}
+        />
+
+        {/* Content — must be z-[2] to sit above overlays */}
+        <div className="container-custom relative z-[2] text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
           >
-            <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-worknub-dark mb-3 sm:mb-4">Simple, Transparent Pricing</h1>
+            <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-worknub-dark mb-3 sm:mb-4">
+              Simple, Transparent Pricing
+            </h1>
             <p className="text-[0.95rem] sm:text-xl text-gray-600 max-w-2xl mx-auto">
               Choose the plan that works for you. Members save up to 40% on standard rates.
             </p>
           </motion.div>
         </div>
       </section>
-
       {/* Member/Non-Member Toggle */}
       <section className="py-6 sm:py-8 bg-white ">
         <div className="container-custom">
@@ -66,7 +86,7 @@ export default function Pricing() {
               onClick={() => setMemberType('nonMember')}
               className={`min-w-0 flex-1 text-center px-3 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all ${memberType === 'nonMember' ? 'bg-worknub-green text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
             >
-              Standard 
+              Standard
             </button>
           </div>
         </div>
