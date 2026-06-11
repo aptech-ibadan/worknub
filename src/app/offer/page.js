@@ -149,7 +149,7 @@ export default function Offer() {
         />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green/30 to-transparent z-[2]" />
 
-        <div className="container-custom relative z-[3] pt-16 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
+        <div className="container-custom items-center relative z-[3] pt-16 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
             {/* LEFT */}

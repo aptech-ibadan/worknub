@@ -103,7 +103,7 @@ export default function HeroSection() {
 
         {/* ── Main content ── */}
         <div className="flex-1 flex flex-row items-center
-          px-[5vw] pt-[120px] pb-20
+          px-[2rem] pt-[120px] pb-20
           max-w-[1280px] mx-auto w-full
           gap-[60px] relative z-[2]">
 
