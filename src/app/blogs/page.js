@@ -223,7 +223,7 @@ export default function Blogs() {
                           <path d="M2 7l3.5 3.5L12 4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
-                      <p className="text-white font-bold text-sm">You're subscribed! 🎉</p>
+                      <p className="text-white font-bold text-sm">You have  subscribed! 🎉</p>
                     </motion.div>
                   ) : (
                     <motion.form
