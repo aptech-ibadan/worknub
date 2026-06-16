@@ -10,10 +10,11 @@ const navLinks = [
   { name: 'Home',       path: '/' },
   { name: 'Spaces',     path: '/spaces' },
   { name: 'Pricing',    path: '/pricing' },
+   { name: 'Membership', path: '/membership' },
   { name: 'Offer',      path: '/offer' },
   { name: 'Gallery',    path: '/gallery' },
   { name: 'Blog',       path: '/blogs' },
-  { name: 'Membership', path: '/membership' },
+ 
 ];
 
 export default function Navbar() {
@@ -45,7 +46,7 @@ export default function Navbar() {
               alt="Worknub Logo"
               width={110}
               height={74}
-              className="w-[90px] sm:w-[110px] h-auto"
+              className="w-[90px] drop-shadow-md sm:w-[110px] h-auto"
               priority
             />
           </Link>

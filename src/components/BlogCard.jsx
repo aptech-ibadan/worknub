@@ -31,7 +31,7 @@ export default function BlogCard({ blog, index, featured = false }) {
         className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group col-span-1 sm:col-span-2 flex flex-col md:flex-row"
       >
         {/* Image area — left side on md+ */}
-        <div className={`relative h-40 md:w-56 md:h-auto bg-gradient-to-br ${bgGradient} overflow-hidden shrink-0`}>
+        <div className={`relative h-40 md:w-56 md:h-auto bg-linear-to-br ${bgGradient} overflow-hidden shrink-0`}>
           <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full border border-current opacity-10" />
           <div className="absolute inset-0 flex items-center justify-center">
             <span className={`text-7xl font-black opacity-[0.07] select-none ${colors.pill.split(' ')[1]}`}>
@@ -80,7 +80,7 @@ export default function BlogCard({ blog, index, featured = false }) {
       className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group flex flex-col"
     >
       {/* Image area */}
-      <div className={`relative h-36 bg-gradient-to-br ${bgGradient} overflow-hidden shrink-0`}>
+      <div className={`relative h-36 bg-linear-to-br ${bgGradient} overflow-hidden shrink-0`}>
         <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full border border-current opacity-10" />
         <div className="absolute inset-0 flex items-center justify-center">
           <span className={`text-6xl font-black opacity-[0.07] select-none ${colors.pill.split(' ')[1]}`}>

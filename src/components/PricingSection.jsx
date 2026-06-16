@@ -43,7 +43,7 @@ export default function PricingSection() {
                             <ul className="list-none p-0 m-0 mb-7 flex flex-col gap-2.5 h-[200px]">
                                 {plan.features.map((f, fi) => (
                                     <li key={fi} className="flex items-center gap-2.5 text-[13.5px] text-gray-700">
-                                        <span className="w-[18px] h-[18px] bg-worknub-green/[0.13] rounded-full flex items-center justify-center shrink-0">
+                                        <span className="w-[18px] h-[18px] bg-worknub-green/13 rounded-full flex items-center justify-center shrink-0">
                                             <FiCheck size={10} className="text-worknub-green" strokeWidth={3} />
                                         </span>
                                         <span className={`${plan.highlight ? "text-white" : "text-gray-700"}`}>
@@ -63,9 +63,15 @@ export default function PricingSection() {
                     ))}
                 </div>
 
-                <p className="text-center mt-8 lg:mt-7 text-gray-600 text-[12px] sm:text-[13px]">
+                {/* <p className="text-center mt-8 lg:mt-7 text-gray-600 text-[12px] sm:text-[13px]">
                     Need a custom plan?{" "}
                     <Link target="_blank" href="https://api.whatsapp.com/send/?phone=2347077732936&text&type=phone_number&app_absent=0" className="text-worknub-green font-semibold no-underline hover:underline">Talk to us →</Link>
+                </p> */}
+
+
+                  <p className="text-center mt-8 lg:mt-7 text-gray-600 text-[12px] sm:text-[13px]">
+              
+                    <Link target="_blank" href="/pricing" className="text-worknub-green font-semibold no-underline hover:underline">View More →</Link>
                 </p>
             </div>
         </section>

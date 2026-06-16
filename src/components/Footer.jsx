@@ -16,7 +16,7 @@ const quickLinks = [
 const supportLinks = [
   { name: 'Membership',    path: '/membership' },
   { name: 'Student Offer', path: '/offer' },
-  { name: 'FAQ',           path: '/faq' },
+  { name: 'FAQ',           path: '/contact' },
   { name: 'Contact Us',    path: '/contact' },
 ];
 
@@ -49,21 +49,21 @@ export default function Footer() {
     <footer className="bg-[#0f0f0f] text-white relative overflow-hidden">
 
       {/* ── Decorative top border gradient ── */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-worknub-green/50 to-transparent" />
+      <div className="h-px w-full bg-linear-to-r from-transparent via-worknub-green/50 to-transparent" />
 
       {/* ── Subtle background glow ── */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-worknub-green/[0.04] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-worknub-green/4 rounded-full blur-3xl pointer-events-none" />
 
       {/* ── Main content ── */}
       <div className="container-custom relative pt-12 sm:pt-16 pb-8 sm:pb-10">
 
         {/* Top CTA strip */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 pb-8 sm:pb-12 border-b border-white/[0.06] mb-8 sm:mb-12">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 pb-8 sm:pb-12 border-b border-white/6 mb-8 sm:mb-12">
           <div>
             <p className="text-worknub-green text-[10px] sm:text-[11px] font-bold tracking-[0.12em] uppercase mb-1 sm:mb-2">Ready to get started?</p>
             <h3 className="text-white text-[1.5rem] sm:text-2xl font-extrabold tracking-[-0.02em]">
               {displayText}
-              <span className="inline-block w-[1px] h-6 bg-white align-middle ml-1 animate-pulse" />
+              <span className="inline-block w-px h-6 bg-white align-middle ml-1 animate-pulse" />
             </h3>
           </div>
           <Link
@@ -98,7 +98,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-8 sm:w-9 h-8 sm:h-9 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-gray-400 hover:bg-worknub-green hover:text-white hover:border-worknub-green transition-all duration-200"
+                  className="w-8 sm:w-9 h-8 sm:h-9 rounded-lg bg-white/6 border border-white/8 flex items-center justify-center text-gray-400 hover:bg-worknub-green hover:text-white hover:border-worknub-green transition-all duration-200"
                 >
                   <Icon size={13} />
                 </a>
@@ -181,7 +181,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="border-t border-white/[0.06] pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+        <div className="border-t border-white/6 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
           <p className="text-gray-600 text-[11px] sm:text-xs text-center sm:text-left">
             © 2026 Worknub. All rights reserved. No.1 Co-working Space in Ibadan.
           </p>

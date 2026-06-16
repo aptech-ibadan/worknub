@@ -38,7 +38,7 @@ export default function ScrollEffects() {
     <>
       {/* ── Scroll Progress Bar ── */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-worknub-green via-worknub-teal to-worknub-green origin-[0%] z-[100]"
+        className="fixed top-0 left-0 right-0 h-1 bg-linear-to-r from-worknub-green via-worknub-teal to-worknub-green origin-[0%] z-100"
         style={{ scaleX }}
       />
 

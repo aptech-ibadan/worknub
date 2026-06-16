@@ -92,20 +92,20 @@ export default function HeroSection() {
 
         {/* Building SVG */}
         <div
-          className="absolute right-0 bottom-0 w-[320px] xl:w-[420px] pointer-events-none z-[1]"
+          className="absolute right-0 bottom-0 w-[320px] xl:w-[420px] pointer-events-none z-1"
           style={{ height: '75vh' }}
         >
           <BuildingSVG className="w-full h-full" opacity={0.14} />
         </div>
 
         {/* Bottom divider */}
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-worknub-green/30 to-transparent z-[1]" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-worknub-green/30 to-transparent z-1" />
 
         {/* ── Main content ── */}
         <div className="flex-1 flex flex-row items-center
-          px-[5vw] pt-[120px] pb-20
+          px-8 pt-[120px] pb-20
           max-w-[1280px] mx-auto w-full
-          gap-[60px] relative z-[2]">
+          gap-[60px] relative z-2">
 
           {/* LEFT — copy */}
           <div className="flex-[0_0_50%] min-w-0">
@@ -124,7 +124,7 @@ export default function HeroSection() {
                   </Pill>
                 </div>
 
-                <p className="text-gray-500 text-[13px] font-semibold tracking-[0.1em] uppercase mb-4">
+                <p className="text-gray-500 text-[13px] font-semibold tracking-widest uppercase mb-4">
                   {slide.eyebrow}
                 </p>
 
@@ -216,7 +216,7 @@ export default function HeroSection() {
         </div>
 
         {/* ── Slide nav ── */}
-        <div className="flex items-center justify-center gap-3 px-[5vw] pb-10 max-w-[1280px] mx-auto w-full relative z-[2]">
+        <div className="flex items-center justify-center gap-3 px-[5vw] pb-10 max-w-[1280px] mx-auto w-full relative z-2">
           <button
             onClick={() => goTo((active - 1 + heroSlides.length) % heroSlides.length)}
             className="bg-white border border-gray-200 rounded-lg w-9 h-9 cursor-pointer text-gray-600 flex items-center justify-center hover:border-worknub-green/40 hover:text-worknub-green transition-colors shadow-sm"

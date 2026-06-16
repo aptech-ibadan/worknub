@@ -1,8 +1,6 @@
-import Navbar from '@/components/Navbar';
-import ScrollEffects from '@/components/ScrollEffects';
+import LayoutWrapper from '@/components/LayoutWrapper';
 import './globals.css';
 import { Google_Sans } from 'next/font/google';
-import Footer from '@/components/Footer';
 
 const googleSans = Google_Sans({
   subsets: ['latin'],
@@ -27,10 +25,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className="font-sans antialiased">
-        <ScrollEffects />
-        <Navbar />
-        {children}
-        <Footer />
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

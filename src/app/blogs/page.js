@@ -57,6 +57,7 @@ export default function Blogs() {
   function handleSubscribe(e) {
     e.preventDefault();
     if (email) setSubscribed(true);
+  
   }
 
   return (
@@ -192,12 +193,12 @@ export default function Blogs() {
               style={{ background: 'radial-gradient(circle, rgba(76,175,80,0.12) 0%, transparent 70%)', transform: 'translate(20%,-40%)' }} />
             <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full pointer-events-none"
               style={{ background: 'radial-gradient(circle, rgba(245,124,0,0.07) 0%, transparent 70%)', transform: 'translate(-20%,40%)' }} />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green/30 to-transparent" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-worknub-green/30 to-transparent" />
 
             <div className="relative flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="max-w-md">
                 <div className="flex items-center gap-2.5 mb-4">
-                  <span className="w-7 h-0.5 bg-worknub-green rounded-sm inline-block" />
+                  <span className="w-7 h-0.5 bg-worknub-green rounded-sm inline-block"/>
                   <span className="text-worknub-green text-[11px] font-black tracking-[0.15em] uppercase">Newsletter</span>
                 </div>
                 <h2 className="text-white text-[clamp(1.6rem,2.5vw,2.2rem)] font-extrabold tracking-[-0.02em] leading-tight mb-3">
@@ -222,7 +223,7 @@ export default function Blogs() {
                           <path d="M2 7l3.5 3.5L12 4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
-                      <p className="text-white font-bold text-sm">You're subscribed! 🎉</p>
+                      <p className="text-white font-bold text-sm">You have  subscribed! 🎉</p>
                     </motion.div>
                   ) : (
                     <motion.form
@@ -239,9 +240,10 @@ export default function Blogs() {
                         className="px-5 py-3.5 rounded-xl text-worknub-dark text-sm font-medium bg-white border-0 outline-none focus:ring-2 focus:ring-worknub-green/40 w-full sm:w-72 placeholder-gray-400"
                       />
                       <button
-                        type="submit"
+                        type="submit"                 
                         className="inline-flex items-center justify-center gap-2 bg-worknub-orange text-white px-6 py-3.5 rounded-xl font-black text-sm hover:bg-[#ef6c00] transition-colors whitespace-nowrap shrink-0"
                         style={{ boxShadow: '0 6px 20px rgba(245,124,0,0.35)' }}
+                        disabled
                       >
                         Subscribe <FiArrowRight size={14} />
                       </button>

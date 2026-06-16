@@ -102,10 +102,10 @@ export default function HeroSection() {
         <BuildingSVG className="w-full h-full" opacity={0.14} />
       </div> */}
 
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-worknub-green/30 to-transparent z-[1]" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-worknub-green/30 to-transparent z-1" />
 
       {/* ── Content ── */}
-      <div className="flex-1 flex flex-col px-5 sm:px-[5vw] pt-20 sm:pt-24 lg:pt-32 pb-10 max-w-[1280px] mx-auto w-full relative z-[2]">
+      <div className="flex-1 flex flex-col px-5 sm:px-[5vw] pt-20 sm:pt-24 lg:pt-32 pb-10 max-w-[1280px] mx-auto w-full relative z-2">
 
         {/* ── Clean Image Slider (NO OVERLAY CONTENT) ── */}
         <div className="w-full max-w-[600px] lg:max-w-[520px] mx-auto mb-8 lg:mb-10">

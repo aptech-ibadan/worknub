@@ -17,7 +17,7 @@ export default function AboutSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="py-16 sm:py-24 lg:py-[100px] px-[5vw] max-w-[1280px] mx-auto">
+    <section ref={ref} className="py-16 sm:py-24 lg:py-[100px] px-8 max-w-[1280px] mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[80px] items-center">
 
         <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}>

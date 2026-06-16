@@ -101,12 +101,12 @@ export default function OfferSection() {
         <div className="bg-worknub-dark rounded-[20px] sm:rounded-[28px] overflow-hidden grid grid-cols-1 lg:grid-cols-2 relative">
           
           {/* Decorative corner accents */}
-          <div className="absolute top-0 left-0 w-32 h-32 bg-worknub-orange/[0.05] rounded-br-full pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-32 h-32 bg-worknub-green/[0.05] rounded-tl-full pointer-events-none" />
+          <div className="absolute top-0 left-0 w-32 h-32 bg-worknub-orange/5 rounded-br-full pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-worknub-green/5 rounded-tl-full pointer-events-none" />
           
           {/* Animated border line */}
           <motion.div 
-            className="absolute top-0 left-1/2 w-px h-0 bg-gradient-to-b from-worknub-green to-transparent hidden lg:block"
+            className="absolute top-0 left-1/2 w-px h-0 bg-linear-to-b from-worknub-green to-transparent hidden lg:block"
             animate={{ height: ['0%', '30%', '0%'] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             style={{ left: '50%' }}
@@ -148,7 +148,7 @@ export default function OfferSection() {
                     {discount}
                   </div>
                   {/* Card */}
-                  <div className="bg-white/[0.06] backdrop-blur-sm border border-white/[0.10] rounded-xl py-4 px-4 sm:px-5 h-full transition-all duration-300 hover:bg-white/[0.08]">
+                  <div className="bg-white/6 backdrop-blur-sm border border-white/10 rounded-xl py-4 px-4 sm:px-5 h-full transition-all duration-300 hover:bg-white/8">
                     <p className="text-white font-bold text-sm mb-1">{label}</p>
                     <p className={`${textClass} text-base font-black tracking-[-0.01em]`}>{price}</p>
                   </div>
@@ -170,7 +170,7 @@ export default function OfferSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="px-4 py-6 sm:px-8 md:p-[50px] bg-worknub-green/[0.07] flex flex-col justify-center items-center text-center border-t border-white/[0.06] lg:border-t-0 lg:border-l relative"
+            className="px-4 py-6 sm:px-8 md:p-[50px] bg-worknub-green/7 flex flex-col justify-center items-center text-center border-t border-white/6 lg:border-t-0 lg:border-l relative"
           >
             {/* Subtle background icon */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02]">
@@ -210,7 +210,7 @@ export default function OfferSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.4 + idx * 0.05 }}
-                  className="bg-worknub-green/[0.15] text-worknub-green text-[11px] font-semibold px-3 py-1 rounded-full hover:bg-worknub-green/[0.25] transition-all cursor-default"
+                  className="bg-worknub-green/15 text-worknub-green text-[11px] font-semibold px-3 py-1 rounded-full hover:bg-worknub-green/25 transition-all cursor-default"
                   whileHover={{ scale: 1.05 }}
                 >
                   {tag}

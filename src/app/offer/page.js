@@ -24,6 +24,33 @@ const corperRates = [
   { label: "Monthly",                 value: "₦58,000", highlight: false },
 ];
 
+const corporateSuites = [
+  {
+    name: "Prime", tagline: "Startups & small teams", membership: "80,000",
+    teamSize: "4 – 6 people", popular: false,
+    memberPrice: "506,000", standardPrice: "759,000",
+    accentText: "text-[#47C341]", accentBg: "bg-[#0c1a12]/[0.07]", accentBorder: "border-[#47C341]/30",
+    badgeColor: "bg-[#0c1a12]", stripColor: "bg-[#0c1a12]", shadowColor: "rgba(12,26,18,0.3)",
+    includes: [{ label: "Private Office", qty: "×1" }, { label: "Private Desk", qty: "×1" }, { label: "Hot Desk", qty: "×2" }],
+  },
+  {
+    name: "Momentum", tagline: "Growing teams", membership: "120,000",
+    teamSize: "7 – 9 people", popular: true,
+    memberPrice: "818,000", standardPrice: "1,226,000",
+    accentText: "text-worknub-green", accentBg: "bg-worknub-green/[0.07]", accentBorder: "border-worknub-green/20",
+    badgeColor: "bg-worknub-green", stripColor: "bg-worknub-green", shadowColor: "rgba(71,195,65,0.3)",
+    includes: [{ label: "Private Office", qty: "×1" }, { label: "Private Desk", qty: "×3" }, { label: "Hot Desk", qty: "×3" }],
+  },
+  {
+    name: "Elite", tagline: "Top tier organisations", membership: "160,000",
+    teamSize: "10 – 14 people", popular: false,
+    memberPrice: "1,248,000", standardPrice: "1,872,000",
+    accentText: "text-worknub-orange", accentBg: "bg-worknub-orange/[0.07]", accentBorder: "border-worknub-orange/20",
+    badgeColor: "bg-worknub-orange", stripColor: "bg-worknub-orange", shadowColor: "rgba(245,124,0,0.25)",
+    includes: [{ label: "Private Office", qty: "×2" }, { label: "Private Desk", qty: "×4" }, { label: "Hot Desk", qty: "×4" }],
+  },
+];
+
 const perks = [
   { icon: FiWifi,    text: "1 Gbps Fibre WiFi" },
   { icon: FiCoffee,  text: "Unlimited Coffee" },
@@ -50,7 +77,7 @@ function RateCard({ icon: Icon, badge, badgeColor, iconBg, accentText, borderAcc
       <div className={`${iconBg} px-5 sm:px-8 pt-6 sm:pt-8 pb-5 sm:pb-7 relative`}>
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <span className={`inline-block text-[11px] font-black tracking-[0.1em] uppercase px-3 py-1.5 rounded-full text-white mb-3 sm:mb-4 ${badgeColor}`}>
+            <span className={`inline-block text-[11px] font-black tracking-widest uppercase px-3 py-1.5 rounded-full text-white mb-3 sm:mb-4 ${badgeColor}`}>
               {badge}
             </span>
             <div className="flex items-center gap-2 sm:gap-3 mb-1">
@@ -143,13 +170,13 @@ export default function Offer() {
             backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat",
           }}
         />
-        <div className="absolute inset-0 z-[1] bg-worknub-mint/70 pointer-events-none" />
-        <div className="absolute inset-0 z-[1] pointer-events-none"
+        <div className="absolute inset-0 z-1 bg-worknub-mint/70 pointer-events-none" />
+        <div className="absolute inset-0 z-1 pointer-events-none"
           style={{ background: "radial-gradient(ellipse at center, transparent 50%, rgba(240,249,240,0.5) 100%)" }}
         />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green/30 to-transparent z-[2]" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-worknub-green/30 to-transparent z-2" />
 
-        <div className="container-custom relative z-[3] pt-16 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
+        <div className="container-custom relative z-3 pt-16 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
             {/* LEFT */}
@@ -163,12 +190,10 @@ export default function Offer() {
                 <span className="w-7 h-0.5 bg-worknub-green inline-block rounded-sm" />
                 <span className="text-worknub-green text-[11px] font-black tracking-[0.15em] uppercase">Limited Time Offer</span>
               </div>
-
               <h1 className="text-[clamp(2rem,6vw,4.5rem)] font-extrabold text-worknub-dark tracking-[-0.03em] leading-[1.05] mb-4 sm:mb-6">
                 Work Smarter.<br />
                 <span className="text-worknub-green">Pay Less.</span>
               </h1>
-
               <p className="text-gray-500 text-[0.95rem] sm:text-lg leading-[1.8] max-w-md mb-7 sm:mb-10">
                 Students save <span className="text-worknub-green font-bold">40%</span>. Corp members save <span className="text-worknub-orange font-bold">25%</span>. Premium workspace, discounted — just show your ID.
               </p>
@@ -256,7 +281,7 @@ export default function Offer() {
                 <p className="text-worknub-dark text-xl font-black tracking-[-0.02em]">120+</p>
                 <p className="text-gray-400 text-[11px] font-medium mt-0.5">Active members</p>
               </div>
-              <div className="absolute -right-10 top-8 bg-white border border-gray-200 shadow-lg rounded-2xl px-5 py-3.5">
+              <div className="absolute -right-10 top-20 bg-white border border-gray-200 shadow-lg rounded-2xl px-5 py-3.5">
                 <p className="text-worknub-dark text-xl font-black tracking-[-0.02em]">5.0★</p>
                 <p className="text-gray-400 text-[11px] font-medium mt-0.5">Member rating</p>
               </div>
@@ -367,7 +392,6 @@ export default function Offer() {
           }}
         />
         <div className="absolute inset-0 bg-[#0c1a12]/80 pointer-events-none" />
-
         <div className="container-custom relative z-10">
           <div className="text-center mb-10 sm:mb-14">
             <div className="flex items-center justify-center gap-2.5 mb-4">
@@ -379,16 +403,16 @@ export default function Offer() {
             <p className="text-white/50 text-[14px] sm:text-[15px] max-w-md mx-auto">No forms. No waiting. Just show up with your ID.</p>
           </div>
           <div className="grid sm:grid-cols-3 gap-4 sm:gap-5 relative">
-            <div className="hidden sm:block absolute top-11 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-gradient-to-r from-worknub-green/15 via-worknub-green/50 to-worknub-green/15" />
+            <div className="hidden sm:block absolute top-11 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-linear-to-r from-worknub-green/15 via-worknub-green/50 to-worknub-green/15" />
             {steps.map(({ number, icon: Icon, title, desc }, i) => (
               <motion.div key={number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
                 viewport={{ once: true }}
-                className="bg-white/[0.04] border border-white/[0.08] rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:bg-white/[0.07] transition-colors duration-300 relative overflow-hidden"
+                className="bg-white/4 border border-white/8 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:bg-white/7 transition-colors duration-300 relative overflow-hidden"
               >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-worknub-green/50 to-transparent" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-linear-to-r from-transparent via-worknub-green/50 to-transparent" />
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-5 sm:mb-6">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 bg-worknub-green rounded-full flex items-center justify-center"
                     style={{ boxShadow: '0 8px 32px rgba(76,175,80,0.35)' }}>
@@ -415,32 +439,25 @@ export default function Offer() {
               <span className="w-7 h-0.5 bg-worknub-green rounded-sm inline-block" />
               <span className="text-worknub-green text-[11px] font-black tracking-[0.12em] uppercase">For Organisations</span>
             </div>
-            <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] font-extrabold text-worknub-dark tracking-[-0.02em] mb-2">Corporate Suites Package</h2>
-            <p className="text-gray-500 text-[14px] sm:text-[15px] max-w-xl">
+            <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] font-extrabold text-worknub-dark tracking-[-0.02em] mb-2">
+              Corporate Suites Package
+            </h2>
+            <p className="text-gray-500 text-[14px] sm:text-[15px] max-w-xl mb-5">
               Tailored workspace bundles for growing teams. One annual membership covers your entire team.
             </p>
+            {/* 33% savings callout */}
+            <div className="inline-flex items-center gap-3 bg-worknub-green/10 border border-worknub-green/25 rounded-2xl px-5 py-3.5">
+              <span className="text-2xl font-black text-worknub-green tracking-tight">33% OFF</span>
+              <span className="w-px h-6 bg-worknub-green/25 shrink-0" />
+              <p className="text-[13px] text-worknub-dark font-semibold leading-snug">
+                Members save <span className="text-worknub-green font-black">33%</span> on all Corporate Suite packages<br />
+                <span className="text-gray-400 font-normal text-[12px]">Pay the annual membership fee once — save every month.</span>
+              </p>
+            </div>
           </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {[
-              {
-                name: "Prime", tagline: "Startups & small teams", membership: "80,000", teamSize: "4 – 6 people", popular: false,
-                accentText: "text-[#47C341]", accentBg: "bg-[#0c1a12]/[0.07]", accentBorder: "border-[#47C341]/30",
-                badgeColor: "bg-[#0c1a12]", stripColor: "bg-[#0c1a12]", shadowColor: "rgba(12,26,18,0.3)",
-                includes: [{ label: "Private Office", qty: "×1" }, { label: "Private Desk", qty: "×1" }, { label: "Hot Desk", qty: "×2" }],
-              },
-              {
-                name: "Momentum", tagline: "Growing teams", membership: "120,000", teamSize: "7 – 9 people", popular: true,
-                accentText: "text-worknub-green", accentBg: "bg-worknub-green/[0.07]", accentBorder: "border-worknub-green/20",
-                badgeColor: "bg-worknub-green", stripColor: "bg-worknub-green", shadowColor: "rgba(71,195,65,0.3)",
-                includes: [{ label: "Private Office", qty: "×1" }, { label: "Private Desk", qty: "×3" }, { label: "Hot Desk", qty: "×3" }],
-              },
-              {
-                name: "Elite", tagline: "Top tier organisations", membership: "160,000", teamSize: "10 – 14 people", popular: false,
-                accentText: "text-worknub-orange", accentBg: "bg-worknub-orange/[0.07]", accentBorder: "border-worknub-orange/20",
-                badgeColor: "bg-worknub-orange", stripColor: "bg-worknub-orange", shadowColor: "rgba(245,124,0,0.25)",
-                includes: [{ label: "Private Office", qty: "×2" }, { label: "Private Desk", qty: "×4" }, { label: "Hot Desk", qty: "×4" }],
-              },
-            ].map((pkg, i) => (
+            {corporateSuites.map((pkg, i) => (
               <motion.div key={pkg.name}
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -448,14 +465,10 @@ export default function Offer() {
                 viewport={{ once: true }}
                 className={`relative bg-white rounded-3xl overflow-hidden flex flex-col border-2 ${pkg.accentBorder} ${pkg.popular ? 'shadow-xl' : 'shadow-sm'} hover:shadow-2xl transition-all duration-500`}
               >
-                {pkg.popular && (
-                  <div className={`${pkg.stripColor} text-white text-[10px] font-black tracking-[0.1em] uppercase text-center py-2`}>
-                    Most Popular
-                  </div>
-                )}
-                {!pkg.popular && <div className={`h-1.5 w-full ${pkg.stripColor}`} />}
+                <div className={`h-1.5 w-full ${pkg.stripColor}`} />
                 <div className={`absolute -top-10 -right-10 w-36 h-36 ${pkg.accentBg} rounded-full opacity-50 pointer-events-none`} />
 
+                {/* Header */}
                 <div className={`${pkg.accentBg} px-5 sm:px-7 pt-5 sm:pt-7 pb-5 sm:pb-6 relative`}>
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0">
@@ -466,7 +479,7 @@ export default function Offer() {
                       <p className={`text-[12px] font-semibold ${pkg.accentText}`}>{pkg.teamSize}</p>
                     </div>
                     <div className="text-right shrink-0">
-                      <p className="text-[10px] text-gray-400 uppercase tracking-widest mb-0.5">Annual fee</p>
+                      <p className="text-[10px] text-gray-400 uppercase tracking-widest mb-0.5">Annual mem. fee</p>
                       <div className="flex items-baseline gap-0.5 justify-end">
                         <span className="text-gray-400 text-xs sm:text-sm">₦</span>
                         <span className={`text-xl sm:text-2xl font-black tracking-[-0.03em] ${pkg.accentText}`}>{pkg.membership}</span>
@@ -475,21 +488,59 @@ export default function Offer() {
                   </div>
                 </div>
 
-                <div className="px-5 sm:px-7 py-5 sm:py-6 flex-1">
-                  <p className="text-[10px] font-black tracking-[0.1em] uppercase text-gray-400 mb-3 sm:mb-4">What's included</p>
-                  <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                    {pkg.includes.map(({ label, qty }) => (
-                      <div key={label} className={`flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl ${pkg.accentBg} border ${pkg.accentBorder}`}>
-                        <div className="flex items-center gap-2">
-                          <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${pkg.badgeColor}`}>
-                            <FiCheck size={10} className="text-white" strokeWidth={3} />
-                          </span>
-                          <span className={`text-[13px] sm:text-[13.5px] font-semibold ${pkg.accentText}`}>{label}</span>
-                        </div>
-                        <span className={`font-black text-[14px] sm:text-[15px] ${pkg.accentText}`}>{qty}</span>
+                <div className="px-5 sm:px-7 py-5 sm:py-6 flex-1 flex flex-col gap-5">
+
+                  {/* Price comparison */}
+                  <div className="rounded-2xl overflow-hidden border border-gray-100">
+                    {/* Member row */}
+                    <div className="flex items-center justify-between px-4 py-3 bg-worknub-green/[0.07] border-b border-worknub-green/15">
+                      <div className="flex items-center gap-2">
+                        <span className="w-5 h-5 rounded-full bg-worknub-green flex items-center justify-center shrink-0">
+                          <FiCheck size={10} className="text-white" strokeWidth={3} />
+                        </span>
+                        <span className="text-[12px] font-bold text-worknub-dark">Member price</span>
                       </div>
-                    ))}
+                      <div>
+                        <span className={`text-[17px] font-black tracking-tight ${pkg.accentText}`}>₦{pkg.memberPrice}</span>
+                        <span className="text-gray-400 text-[11px] ml-1">/mo</span>
+                      </div>
+                    </div>
+                    {/* Standard row */}
+                    <div className="flex items-center justify-between px-4 py-3 bg-gray-50 border-b border-gray-100">
+                      <span className="text-[12px] font-medium text-gray-400">Standard price</span>
+                      <div>
+                        <span className="text-[15px] font-bold text-gray-400 line-through">₦{pkg.standardPrice}</span>
+                        <span className="text-gray-400 text-[11px] ml-1">/mo</span>
+                      </div>
+                    </div>
+                    {/* Savings row */}
+                    <div className={`flex items-center justify-between px-4 py-2.5 ${pkg.accentBg}`}>
+                      <span className="text-[11px] font-bold text-gray-500">You save monthly</span>
+                      <span className={`text-[13px] font-black ${pkg.accentText}`}>
+                        ₦{(parseInt(pkg.standardPrice.replace(/,/g, '')) - parseInt(pkg.memberPrice.replace(/,/g, ''))).toLocaleString()} · 33% OFF
+                      </span>
+                    </div>
                   </div>
+
+                  {/* What's included */}
+                  <div>
+                    <p className="text-[10px] font-black tracking-widest uppercase text-gray-400 mb-3">What's included</p>
+                    <div className="space-y-2">
+                      {pkg.includes.map(({ label, qty }) => (
+                        <div key={label} className={`flex items-center justify-between px-3 sm:px-4 py-2.5 rounded-xl ${pkg.accentBg} border ${pkg.accentBorder}`}>
+                          <div className="flex items-center gap-2">
+                            <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${pkg.badgeColor}`}>
+                              <FiCheck size={10} className="text-white" strokeWidth={3} />
+                            </span>
+                            <span className={`text-[13px] sm:text-[13.5px] font-semibold ${pkg.accentText}`}>{label}</span>
+                          </div>
+                          <span className={`font-black text-[14px] sm:text-[15px] ${pkg.accentText}`}>{qty}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Perks note */}
                   <div className="flex items-start gap-2.5 bg-gray-50 border border-gray-100 rounded-xl px-3 sm:px-4 py-3">
                     <FiCheck size={12} className={pkg.accentText} strokeWidth={3} />
                     <p className="text-gray-500 text-[11.5px] sm:text-[12px] leading-[1.6]">
@@ -498,6 +549,7 @@ export default function Offer() {
                   </div>
                 </div>
 
+                {/* CTA */}
                 <div className="px-5 sm:px-7 pb-5 sm:pb-7">
                   <Link href="/contact"
                     className={`flex items-center justify-center gap-2 w-full py-3 sm:py-3.5 rounded-xl font-black text-sm text-white tracking-[0.01em] transition-all duration-200 hover:gap-3 whitespace-nowrap ${pkg.badgeColor} ${
@@ -514,6 +566,7 @@ export default function Offer() {
               </motion.div>
             ))}
           </div>
+
           <p className="text-center text-gray-400 text-[13px] mt-6 sm:mt-8">
             Corporate packages are annual memberships. Need a custom size?{' '}
             <Link href="/contact" className="text-worknub-green font-semibold hover:underline">Talk to us →</Link>
@@ -552,7 +605,7 @@ export default function Offer() {
           >
             <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none"
               style={{ background: 'radial-gradient(circle, rgba(76,175,80,0.1) 0%, transparent 70%)', transform: 'translate(20%,-40%)' }} />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green/30 to-transparent" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-worknub-green/30 to-transparent" />
             <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 sm:gap-10">
               <div className="max-w-lg">
                 <div className="flex items-center gap-2.5 mb-4">
@@ -571,7 +624,7 @@ export default function Offer() {
                   Get in Touch <FiArrowRight size={15} />
                 </Link>
                 <Link href="/pricing"
-                  className="inline-flex items-center justify-center gap-2 border border-white/15 text-white/80 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm hover:bg-white/[0.05] transition-colors whitespace-nowrap">
+                  className="inline-flex items-center justify-center gap-2 border border-white/15 text-white/80 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm hover:bg-white/5 transition-colors whitespace-nowrap">
                   View Full Pricing
                 </Link>
               </div>

@@ -7,7 +7,7 @@ import {
   FiCheckCircle, FiAlertCircle,
   FiFacebook, FiTwitter, FiInstagram, FiLinkedin
 } from 'react-icons/fi';
-import { SiTiktok } from 'react-icons/si';
+import { SiTiktok, SiWhatsapp } from 'react-icons/si';
 
 const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
 
@@ -146,6 +146,17 @@ export default function Contact() {
             <p className="text-[0.95rem] sm:text-lg text-gray-500 max-w-2xl mx-auto">
               Have questions? We'd love to hear from you. Reach out and let's start a conversation.
             </p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="https://wa.me/2347077732936"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-worknub-green px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-worknub-green/20 hover:bg-[#43a047] transition-colors"
+              >
+                <SiWhatsapp className="text-xl" />
+                Message us on WhatsApp
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -355,14 +366,15 @@ export default function Contact() {
               {/* Map */}
               <div className="bg-white rounded-3xl overflow-hidden shadow-xl">
                 <div className="h-80 w-full">
-                  <iframe
+                  {/* <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.892526328172!2d3.902327974437879!3d7.396575992594624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398d8e0d3098c9%3A0x5f5b7e8e0e5c5e5!2sAgodi%20GRA%2C%20Ibadan!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
                     width="100%" height="100%"
                     style={{ border: 0 }}
                     allowFullScreen loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Worknub Location"
-                  />
+                  /> */}
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.455664593069!2d3.9126881999999994!3d7.4061821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103993000d9514a9%3A0xdbcb03feaa1073f3!2sWorknub!5e1!3m2!1sen!2sng!4v1781606090794!5m2!1sen!2sng" width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div className="p-6">
                   <div className="flex items-start gap-3 mb-4">
@@ -406,6 +418,7 @@ export default function Contact() {
                     className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-worknub-green transition-colors text-sm"
                   />
                   <button
+                  disabled
                     onClick={() => { if (newsEmail) { alert('Subscribed!'); setNewsEmail(''); } }}
                     className="bg-worknub-green text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#3aad35] transition-colors whitespace-nowrap">
                     Subscribe
@@ -418,7 +431,7 @@ export default function Contact() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20">
+      <section id='faq' className="py-20">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
