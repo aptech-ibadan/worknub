@@ -4,19 +4,20 @@ import { motion } from 'framer-motion';
 import { FiCheck, FiArrowRight } from 'react-icons/fi';
 
 export default function PricingCard({ plan, isPopular = false }) {
+  const features = plan.features ?? [];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className={`relative bg-white rounded-3xl overflow-hidden flex flex-col transition-shadow duration-300 hover:shadow-xl ${
+      className={`relative bg-white rounded-3xl overflow-hidden flex flex-col w-full transition-shadow duration-300 hover:shadow-xl ${
         isPopular
           ? 'border-2 border-worknub-orange shadow-lg shadow-worknub-orange/10'
           : 'border border-gray-100 shadow-sm'
       }`}
     >
-      {/* Popular badge */}
       {isPopular && (
         <div className="absolute top-4 right-4 bg-worknub-orange text-white text-[11px] font-bold tracking-[0.06em] uppercase px-3 py-1 rounded-full">
           Most Popular
@@ -38,7 +39,7 @@ export default function PricingCard({ plan, isPopular = false }) {
       {/* Price */}
       <div className="px-7 pb-6 border-b border-gray-100">
         <div className="flex items-baseline gap-1">
-          <span className=" text-lg font-semibold">₦</span>
+          <span className="text-lg font-semibold">₦</span>
           <span className={`text-4xl font-black tracking-[-0.03em] ${isPopular ? 'text-worknub-orange' : 'text-worknub-green'}`}>
             {plan.price}
           </span>
@@ -49,32 +50,31 @@ export default function PricingCard({ plan, isPopular = false }) {
         )}
       </div>
 
-      {/* Features */}
-      <div className="px-7 py-6 flex-1">
-        <p className="text-[11px] font-bold tracking-[0.08em] uppercase text-gray-400 mb-4">What's included</p>
-        <ul className="space-y-3">
-          {plan.features.map((feature, idx) => (
-            <li key={idx} className="flex items-center gap-3 text-gray-600 text-[13.5px]">
-              <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${
-                isPopular ? 'bg-worknub-orange/10' : 'bg-worknub-green/10'
-              }`}>
-                <FiCheck
-                  size={10}
-                  className={isPopular ? 'text-worknub-orange' : 'text-worknub-green'}
-                  strokeWidth={3}
-                />
-              </span>
-             
-                      {feature}
-            
-            
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* Features — only renders if features exist */}
+      {features.length > 0 && (
+        <div className="px-7 py-6 flex-1">
+          <p className="text-[11px] font-bold tracking-[0.08em] uppercase text-gray-400 mb-4">What's included</p>
+          <ul className="space-y-3">
+            {features.map((feature, idx) => (
+              <li key={idx} className="flex items-center gap-3 text-gray-600 text-[13.5px]">
+                <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${
+                  isPopular ? 'bg-worknub-orange/10' : 'bg-worknub-green/10'
+                }`}>
+                  <FiCheck
+                    size={10}
+                    className={isPopular ? 'text-worknub-orange' : 'text-worknub-green'}
+                    strokeWidth={3}
+                  />
+                </span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {/* CTA */}
-      <div className="px-7 pb-7">
+      <div className="px-7 pb-7 mt-auto">
         <Link
           href="/contact"
           className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200 ${

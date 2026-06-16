@@ -198,7 +198,7 @@ export default function Blogs() {
             <div className="relative flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="max-w-md">
                 <div className="flex items-center gap-2.5 mb-4">
-                  <span className="w-7 h-0.5 bg-worknub-green rounded-sm inline-block" />
+                  <span className="w-7 h-0.5 bg-worknub-green rounded-sm inline-block"/>
                   <span className="text-worknub-green text-[11px] font-black tracking-[0.15em] uppercase">Newsletter</span>
                 </div>
                 <h2 className="text-white text-[clamp(1.6rem,2.5vw,2.2rem)] font-extrabold tracking-[-0.02em] leading-tight mb-3">

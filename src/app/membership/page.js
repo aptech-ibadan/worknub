@@ -64,7 +64,12 @@ const tiers = [
   { name: "Shared Space",    price: "20,000", icon: FiUsers,     popular: false },
   { name: "Private Desk",    price: "30,000", icon: FiBriefcase, popular: true  },
   { name: "Private Office",  price: "40,000", icon: FiHome,      popular: false },
-  { name: "Corporate Suite", price: "70,000", icon: FiStar,      popular: false },
+  { name: "Corporate Suite (PRIME)", price: "80,000", icon: FiStar,      popular: false },
+  { name: "Corporate Suite (MOMENTUM)", price: "120,000", icon: FiStar, 
+         popular: false },
+  { name: "Corporate Suite (ELITE)", price: "200,000", icon: FiStar, 
+         popular: false },
+
 ];
 
 const eligibility = [
@@ -246,11 +251,20 @@ export default function Membership() {
       {/* ── MEMBERSHIP FEES ── */}
       <section className="py-24 bg-[#0c1a12] relative overflow-hidden">
         {/* Background texture */}
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        {/* <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-worknub-green/[0.08] pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
-          style={{ width: 800, height: 800, background: 'radial-gradient(circle, rgba(76,175,80,0.05) 0%, transparent 60%)' }} />
+          style={{ width: 800, height: 800, background: 'radial-gradient(circle, rgba(76,175,80,0.05) 0%, transparent 60%)' }} /> */}
+        
+
+         <div className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url(https://res.cloudinary.com/ddldviftf/image/upload/v1781104980/green_gamums.png)",
+            backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat",
+          }}
+        />  
+            <div className="absolute inset-0 bg-[#0c1a12]/80 pointer-events-none" />
 
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 relative">
           <div className="text-center mb-12">
@@ -265,7 +279,8 @@ export default function Membership() {
             <p className="text-white/50 text-[15px]">Annual membership — renewed once every year.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5"> */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {tiers.map((tier, i) => (
               <motion.div
                 key={i}

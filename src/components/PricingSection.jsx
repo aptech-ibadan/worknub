@@ -63,9 +63,15 @@ export default function PricingSection() {
                     ))}
                 </div>
 
-                <p className="text-center mt-8 lg:mt-7 text-gray-600 text-[12px] sm:text-[13px]">
+                {/* <p className="text-center mt-8 lg:mt-7 text-gray-600 text-[12px] sm:text-[13px]">
                     Need a custom plan?{" "}
                     <Link target="_blank" href="https://api.whatsapp.com/send/?phone=2347077732936&text&type=phone_number&app_absent=0" className="text-worknub-green font-semibold no-underline hover:underline">Talk to us →</Link>
+                </p> */}
+
+
+                  <p className="text-center mt-8 lg:mt-7 text-gray-600 text-[12px] sm:text-[13px]">
+              
+                    <Link target="_blank" href="/pricing" className="text-worknub-green font-semibold no-underline hover:underline">View More →</Link>
                 </p>
             </div>
         </section>

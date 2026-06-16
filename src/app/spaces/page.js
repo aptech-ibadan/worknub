@@ -126,10 +126,10 @@ function FeaturedCard({ space, index }) {
             {space.tag}
           </span>
           <h3 className="text-white text-2xl font-extrabold tracking-[-0.02em] mb-1">{space.name}</h3>
-          <div className="flex items-baseline gap-1">
+          {/* <div className="flex items-baseline gap-1">
             <span className="text-white text-xl font-black">{space.price}</span>
             <span className="text-white/60 text-sm">{space.period}</span>
-          </div>
+          </div> */}
           <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-500 ease-out">
             <ul className="mt-4 space-y-2">
               {space.features.map((f, i) => (
@@ -168,10 +168,10 @@ function FeaturedCard({ space, index }) {
           </ul>
         </div>
         <div className="flex flex-col gap-3">
-          <div className="flex items-baseline gap-1 mb-2">
+          {/* <div className="flex items-baseline gap-1 mb-2">
             <span className={`text-3xl font-black tracking-[-0.03em] ${space.accentClass}`}>{space.price}</span>
             <span className="text-gray-400 text-sm">{space.period}</span>
-          </div>
+          </div> */}
           <Link
             href="/pricing"
             className={`flex items-center justify-center gap-2 py-3 md:py-3.5 px-5 md:px-6 rounded-xl font-bold text-sm transition-all duration-300 hover:gap-3 ${
@@ -213,10 +213,10 @@ function SmallCard({ space, index }) {
         </span>
         <div className="absolute inset-0 bg-worknub-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 px-6">
           <p className="text-white font-extrabold text-lg text-center tracking-[-0.01em]">{space.name}</p>
-          <div className="flex items-baseline gap-1">
+          {/* <div className="flex items-baseline gap-1">
             <span className="text-white text-2xl font-black">{space.price}</span>
             <span className="text-white/60 text-sm">{space.period}</span>
-          </div>
+          </div> */}
           <Link href="/pricing" className="mt-2 inline-flex items-center gap-1.5 bg-worknub-green text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-[#3aad35] transition-colors">
             Book Now <FiArrowRight size={13} />
           </Link>
@@ -242,10 +242,10 @@ function SmallCard({ space, index }) {
           ))}
         </ul>
         <div className="pt-3 md:pt-4 border-t border-gray-100 flex items-center justify-between">
-          <div className="flex items-baseline gap-1">
+          {/* <div className="flex items-baseline gap-1">
             <span className={`text-lg md:text-xl font-black tracking-[-0.02em] ${space.accentClass}`}>{space.price}</span>
             <span className="text-gray-400 text-[10px] md:text-xs">{space.period}</span>
-          </div>
+          </div> */}
           <Link href="/pricing" className="inline-flex items-center gap-1.5 bg-worknub-dark text-white px-3 md:px-4 py-2 md:py-2.5 rounded-xl font-bold text-[11px] md:text-xs hover:opacity-90 transition-opacity">
             Book Now <FiArrowRight size={12} />
           </Link>
@@ -340,7 +340,7 @@ export default function Spaces() {
               <div key={label} className="flex items-center gap-3 bg-white border border-gray-100 shadow-md rounded-2xl px-5 py-3">
                 <FiMapPin size={13} className="text-gray-300" />
                 <span className="text-gray-500 text-xs font-medium">{label}</span>
-                <span className={`text-sm font-bold ${color}`}>{price}</span>
+                {/* <span className={`text-sm font-bold ${color}`}>{price}</span> */}
               </div>
             ))}
           </motion.div>
