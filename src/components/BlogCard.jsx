@@ -18,6 +18,7 @@ const categoryBg = {
 };
 
 export default function BlogCard({ blog, index, featured = false }) {
+  const blogId = blog.id || blog._id;
   const colors = categoryColors[blog.category] || categoryColors["Productivity"];
   const bgGradient = categoryBg[blog.category] || categoryBg["Productivity"];
 

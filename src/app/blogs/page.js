@@ -1,10 +1,10 @@
 "use client";
 import BlogCard from '@/components/BlogCard';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FiArrowRight, FiBookOpen } from 'react-icons/fi';
 
-const blogs = [
+const defaultBlogs = [
   {
     id: 1,
     title: "10 Tips for Productive Remote Work",
@@ -43,8 +43,25 @@ const categories = ["All", "Productivity", "Trends", "Networking", "Future of Wo
 
 export default function Blogs() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [blogs, setBlogs] = useState(defaultBlogs);
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+
+  useEffect(() => {
+    async function loadBlogs() {
+      try {
+        const res = await fetch('/api/blogs');
+        if (res.ok) {
+          const data = await res.json();
+          setBlogs(data.blogs || defaultBlogs);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    loadBlogs();
+  }, []);
 
   const filtered = selectedCategory === "All"
     ? blogs

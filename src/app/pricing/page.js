@@ -60,8 +60,8 @@ const spaceCategories = [
           name: "Yearly", period: "year",
           tiers: [
             { type: "3 months",  price: "350,000"   },
-            { type: "6 months",  price: "700,000"   },
-            { type: "12 months", price: "1,400,000" },
+            { type: "6 months",  price: "695,000"   },
+            { type: "12 months", price: "1,385,000" },
           ],
         },
       ],
@@ -157,8 +157,8 @@ const singleSpaces = [
     description: "Fully furnished space for meetings and collaborations",
     price: "38,700",
     period: "per hour",
-    memberNote: "Same rate for members & non-members",
-    features: ["Seats up to 10", "HD display & whiteboard", "High-speed WiFi", "Priority booking for members"],
+    memberNote: "",
+    features: ["Seats up to 15", "HD display & whiteboard", "High-speed WiFi", "Priority booking for members"],
   },
   {
     id: "event-space",
@@ -167,8 +167,8 @@ const singleSpaces = [
     description: "Dedicated space for events and gatherings",
     price: "91,400",
     period: "1st hour",
-    memberPrice: "64,500",
-    memberNote: "Members pay ₦64,500 for the first hour",
+    memberPrice: "91,400",
+    memberNote: "Subsequent hour ₦64,500",
     features: ["Capacity for large groups", "AV setup included", "High-speed WiFi", "Flexible seating arrangements"],
   },
 ];
@@ -217,9 +217,9 @@ const corporateSuites = [
       { space: "Private Desk",   qty: 1 },
       { space: "Hot Desk",       qty: 2 },
     ],
-    perks: "WiFi, coffee, printing, CCTV, 24/7 access & business address for all team members.",
+    perks: "WiFi, coffee, printing, CCTV, branding, access & business address for all team members.",
     pricing: {
-      member:    { monthly: "506,000",   tiers: [{ type: "3 months", price: "1,518,000" }, { type: "6 months", price: "3,036,000" }, { type: "12 months", price: "6,072,000"  }] },
+      member:    { monthly: "506,000",   tiers: [{ type: "3 months", price: "1,500,000" }, { type: "6 months", price: "3,000,000" }, { type: "12 months", price: "6,000,000"  }] },
       nonMember: { monthly: "759,000",   tiers: [{ type: "3 months", price: "2,277,000" }, { type: "6 months", price: "4,554,000" }, { type: "12 months", price: "9,108,000"  }] },
     },
   },
@@ -235,9 +235,9 @@ const corporateSuites = [
       { space: "Private Desk",   qty: 3 },
       { space: "Hot Desk",       qty: 3 },
     ],
-    perks: "WiFi, coffee, printing, CCTV, 24/7 access & business address for all team members.",
+    perks: "WiFi, coffee, printing, CCTV, branding, 1hr meeting room per month , business address for all team members.",
     pricing: {
-      member:    { monthly: "818,000",   tiers: [{ type: "3 months", price: "2,454,000" }, { type: "6 months", price: "4,908,000"  }, { type: "12 months", price: "9,816,000"  }] },
+      member:    { monthly: "818,000",   tiers: [{ type: "3 months", price: "2,440,000" }, { type: "6 months", price: "4,880,000"  }, { type: "12 months", price: "9,760,000"  }] },
       nonMember: { monthly: "1,226,000", tiers: [{ type: "3 months", price: "3,678,000" }, { type: "6 months", price: "7,356,000"  }, { type: "12 months", price: "14,712,000" }] },
     },
   },
@@ -253,9 +253,9 @@ const corporateSuites = [
       { space: "Private Desk",   qty: 4 },
       { space: "Hot Desk",       qty: 4 },
     ],
-    perks: "WiFi, coffee, printing, CCTV, 24/7 access & business address for all team members.",
+    perks: "WiFi, coffee, printing, CCTV,branding, 2hrs meeting room per month & business address for all team members.",
     pricing: {
-      member:    { monthly: "1,248,000", tiers: [{ type: "3 months", price: "3,744,000"  }, { type: "6 months", price: "7,488,000"  }, { type: "12 months", price: "14,976,000" }] },
+      member:    { monthly: "1,248,000", tiers: [{ type: "3 months", price: "3,724,000"  }, { type: "6 months", price: "7,448,000"  }, { type: "12 months", price: "14,896,000" }] },
       nonMember: { monthly: "1,872,000", tiers: [{ type: "3 months", price: "5,616,000"  }, { type: "6 months", price: "11,232,000" }, { type: "12 months", price: "22,464,000" }] },
     },
   },
@@ -505,11 +505,16 @@ function SingleSpaceCard({ space, isMember }) {
           </div>
           {isMember && space.memberPrice ? (
             <p className="text-[12px] text-worknub-green font-semibold">
-              Member rate — save ₦{(parseInt(space.price.replace(/,/g, '')) - parseInt(space.memberPrice.replace(/,/g, ''))).toLocaleString()}
+              {/* Member rate — save ₦{(parseInt(space.price.replace(/,/g, '')) - parseInt(space.memberPrice.replace(/,/g, ''))).toLocaleString()} */}
+              ₦65,400 for subsequent hours.
             </p>
           ) : (
             <p className="text-[12px] text-gray-400">{space.memberNote}</p>
           )}
+
+          <p className="text-[12px] text-red-500">
+            3hrs+ booking discount: 10% for members, 5% for non-members
+          </p>
         </div>
       </div>
 
