@@ -124,25 +124,25 @@ const spaceCategories = [
     plans: {
       member: [
         { name: "Hourly", price: "16,200", period: "hour" },
-        {
-          name: "Bundle", period: "bundle",
-          tiers: [
-            { type: "5 hours",  price: "72,900" },
-            { type: "10 hours", price: "137,700" },
-            { type: "20 hours", price: "259,200" },
-          ],
-        },
+        // {
+        //   name: "Bundle", period: "bundle",
+        //   tiers: [
+        //     { type: "5 hours",  price: "72,900" },
+        //     { type: "10 hours", price: "137,700" },
+        //     { type: "20 hours", price: "259,200" },
+        //   ],
+        // },
       ],
       nonMember: [
         { name: "Hourly", price: "16,200", period: "hour" },
-        {
-          name: "Bundle", period: "bundle",
-          tiers: [
-            { type: "5 hours",  price: "72,900" },
-            { type: "10 hours", price: "137,700" },
-            { type: "20 hours", price: "259,200" },
-          ],
-        },
+        // {
+        //   name: "Bundle", period: "bundle",
+        //   tiers: [
+        //     { type: "5 hours",  price: "72,900" },
+        //     { type: "10 hours", price: "137,700" },
+        //     { type: "20 hours", price: "259,200" },
+        //   ],
+        // },
       ],
     },
   },
