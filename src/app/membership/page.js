@@ -170,7 +170,7 @@ export default function Membership() {
                   style={{ background: 'radial-gradient(circle, rgba(76,175,80,0.2) 0%, transparent 70%)', transform: 'translate(20%,-30%)' }} />
                 <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full pointer-events-none"
                   style={{ background: 'radial-gradient(circle, rgba(245,124,0,0.15) 0%, transparent 70%)', transform: 'translate(-20%,30%)' }} />
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green/40 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-worknub-green/40 to-transparent" />
 
                 {/* Card header */}
                 <div className="flex items-center justify-between mb-8 relative">
@@ -178,7 +178,7 @@ export default function Membership() {
                     <Image src="https://res.cloudinary.com/ddldviftf/image/upload/v1780995845/green_and_green_favicon_micadb.png" alt="Logo" width={150} height={100} />
                   
                   </div>
-                  <span className="text-[10px] font-black tracking-[0.1em] uppercase text-worknub-green bg-worknub-green/10 border border-worknub-green/25 px-3 py-1.5 rounded-full">
+                  <span className="text-[10px] font-black tracking-widest uppercase text-worknub-green bg-worknub-green/10 border border-worknub-green/25 px-3 py-1.5 rounded-full">
                     Member
                   </span>
                 </div>
@@ -195,7 +195,7 @@ export default function Membership() {
                 {/* Tier mini-list */}
                 <div className="space-y-2.5 relative">
                   {tiers.map((tier) => (
-                    <div key={tier.name} className={`flex items-center justify-between px-4 py-2.5 rounded-xl ${tier.popular ? 'bg-worknub-green/15 border border-worknub-green/25' : 'bg-white/[0.05]'}`}>
+                    <div key={tier.name} className={`flex items-center justify-between px-4 py-2.5 rounded-xl ${tier.popular ? 'bg-worknub-green/15 border border-worknub-green/25' : 'bg-white/5'}`}>
                       <span className={`text-[13px] font-semibold ${tier.popular ? 'text-white' : 'text-white/60'}`}>{tier.name}</span>
                       <span className={`font-black text-[14px] ${tier.popular ? 'text-worknub-green' : 'text-white/50'}`}>₦{tier.price}/yr</span>
                     </div>
@@ -203,7 +203,7 @@ export default function Membership() {
                 </div>
 
                 {/* Valid period */}
-                <div className="flex items-center gap-2 mt-6 pt-5 border-t border-white/[0.08] relative">
+                <div className="flex items-center gap-2 mt-6 pt-5 border-t border-white/8 relative">
                   <FiCalendar size={13} className="text-white/30" />
                   <span className="text-white/35 text-[12px]">Valid for 12 months from activation</span>
                 </div>
@@ -253,7 +253,7 @@ export default function Membership() {
         {/* Background texture */}
         {/* <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-worknub-green/[0.08] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-worknub-green/8 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
           style={{ width: 800, height: 800, background: 'radial-gradient(circle, rgba(76,175,80,0.05) 0%, transparent 60%)' }} /> */}
         
@@ -290,8 +290,8 @@ export default function Membership() {
                 viewport={{ once: true }}
                 className={`relative rounded-2xl overflow-hidden border-2 transition-all duration-300 hover:scale-[1.02] ${
                   tier.popular
-                    ? 'border-worknub-green bg-worknub-green/[0.12]'
-                    : 'border-white/[0.08] bg-white/[0.04]'
+                    ? 'border-worknub-green bg-worknub-green/12'
+                    : 'border-white/8 bg-white/4'
                 }`}
               >
                 {tier.popular && (
@@ -300,7 +300,7 @@ export default function Membership() {
                   </div>
                 )}
                 <div className="p-7 text-center">
-                  <div className={`w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center ${tier.popular ? 'bg-worknub-green' : 'bg-white/[0.08]'}`}
+                  <div className={`w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center ${tier.popular ? 'bg-worknub-green' : 'bg-white/8'}`}
                     style={tier.popular ? { boxShadow: '0 6px 20px rgba(76,175,80,0.4)' } : {}}>
                     <tier.icon size={22} className={tier.popular ? 'text-white' : 'text-white/60'} />
                   </div>
@@ -323,7 +323,7 @@ export default function Membership() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-8 bg-white/[0.04] border border-white/[0.08] rounded-2xl px-4 py-6"
+            className="mt-8 bg-white/4 border border-white/8 rounded-2xl px-4 py-6"
           >
             <p className="text-white/40 text-[11px] font-black uppercase tracking-widest mb-4">Included in all tiers</p>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
@@ -379,7 +379,7 @@ export default function Membership() {
                 ))}
               </div>
 
-              <div className="mt-6 flex items-start gap-3 bg-worknub-orange/[0.06] border border-worknub-orange/20 rounded-xl px-5 py-4">
+              <div className="mt-6 flex items-start gap-3 bg-worknub-orange/6 border border-worknub-orange/20 rounded-xl px-5 py-4">
                 <FiZap size={18} className="text-worknub-orange shrink-0 mt-0.5" />
                 <p className="text-gray-600 text-[13.5px] leading-[1.65]">
                   <span className="font-bold text-worknub-dark">Refer & Earn:</span> Refer a client who books a one-month package and get your membership for free.
@@ -399,7 +399,7 @@ export default function Membership() {
               {/* Glows */}
               <div className="absolute top-0 right-0 w-52 h-52 rounded-full pointer-events-none"
                 style={{ background: 'radial-gradient(circle, rgba(76,175,80,0.15) 0%, transparent 70%)', transform: 'translate(20%,-30%)' }} />
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green/30 to-transparent" />
+              <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-worknub-green/30 to-transparent" />
 
               <div className="relative">
                 <div className="w-14 h-14 bg-worknub-green rounded-2xl flex items-center justify-center mb-6"

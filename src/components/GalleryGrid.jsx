@@ -124,7 +124,7 @@ export default function GalleryGrid() {
                 />
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* Expand icon */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 shadow-xl">
@@ -162,7 +162,7 @@ export default function GalleryGrid() {
             {/* Close */}
             <button
               onClick={closeImage}
-              className="absolute top-5 right-5 w-10 h-10 bg-white/[0.08] border border-white/[0.15] rounded-xl flex items-center justify-center text-white hover:bg-white/[0.15] transition-colors z-10"
+              className="absolute top-5 right-5 w-10 h-10 bg-white/8 border border-white/15 rounded-xl flex items-center justify-center text-white hover:bg-white/15 transition-colors z-10"
             >
               <FiX size={18} />
             </button>
@@ -170,7 +170,7 @@ export default function GalleryGrid() {
             {/* Prev */}
             <button
               onClick={(e) => { e.stopPropagation(); prev(); }}
-              className="absolute left-4 md:left-8 w-11 h-11 bg-white/[0.08] border border-white/[0.15] rounded-xl flex items-center justify-center text-white hover:bg-white/[0.15] transition-colors z-10"
+              className="absolute left-4 md:left-8 w-11 h-11 bg-white/8 border border-white/15 rounded-xl flex items-center justify-center text-white hover:bg-white/15 transition-colors z-10"
             >
               <FiChevronLeft size={20} />
             </button>
@@ -178,7 +178,7 @@ export default function GalleryGrid() {
             {/* Next */}
             <button
               onClick={(e) => { e.stopPropagation(); next(); }}
-              className="absolute right-4 md:right-8 w-11 h-11 bg-white/[0.08] border border-white/[0.15] rounded-xl flex items-center justify-center text-white hover:bg-white/[0.15] transition-colors z-10"
+              className="absolute right-4 md:right-8 w-11 h-11 bg-white/8 border border-white/15 rounded-xl flex items-center justify-center text-white hover:bg-white/15 transition-colors z-10"
             >
               <FiChevronRight size={20} />
             </button>

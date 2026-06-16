@@ -285,7 +285,7 @@ function YearlyPricingCard({ plan }) {
       <div className="h-1 w-full bg-worknub-green" />
 
       <div className="px-7 pt-7 pb-5">
-        <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-gray-400 mb-1">Long-term</p>
+        <p className="text-[11px] font-bold tracking-widest uppercase text-gray-400 mb-1">Long-term</p>
         <h3 className="text-xl font-extrabold text-worknub-dark tracking-[-0.01em]">{plan.name}</h3>
       </div>
 
@@ -367,12 +367,12 @@ function CorporateSuiteCard({ suite, pricing, index }) {
       viewport={{ once: true }}
       className={`relative flex flex-col rounded-3xl overflow-hidden border-2 transition-all duration-300 hover:scale-[1.02] ${
         suite.popular
-          ? "border-worknub-green bg-worknub-green/[0.08]"
-          : "border-white/[0.08] bg-white/[0.04]"
+          ? "border-worknub-green bg-worknub-green/8"
+          : "border-white/8 bg-white/4"
       }`}
     >
       {suite.popular && (
-        <div className="bg-worknub-green text-white text-[10px] font-black tracking-[0.08em] uppercase text-center py-1.5">
+        <div className="bg-worknub-green text-white text-[10px] font-black tracking-widest uppercase text-center py-1.5">
           Most Popular
         </div>
       )}
@@ -388,7 +388,7 @@ function CorporateSuiteCard({ suite, pricing, index }) {
         </div>
 
         {/* Monthly base price */}
-        <div className="border-t border-white/[0.08] pt-5">
+        <div className="border-t border-white/8 pt-5">
           <p className="text-white/30 text-[11px] uppercase tracking-widest mb-1">Monthly base</p>
           <div className="flex items-baseline gap-1">
             <span className="text-white/60 text-base">₦</span>
@@ -410,14 +410,14 @@ function CorporateSuiteCard({ suite, pricing, index }) {
                 className={`flex-1 py-1.5 rounded-lg text-[11px] font-bold transition-all border ${
                   selected === i
                     ? "bg-worknub-green text-white border-worknub-green"
-                    : "bg-white/[0.05] text-white/50 border-white/[0.08] hover:border-worknub-green/40 hover:text-white/80"
+                    : "bg-white/5 text-white/50 border-white/8 hover:border-worknub-green/40 hover:text-white/80"
                 }`}
               >
                 {tier.type}
               </button>
             ))}
           </div>
-          <div className="flex items-baseline gap-1 bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3">
+          <div className="flex items-baseline gap-1 bg-white/4 border border-white/8 rounded-xl px-4 py-3">
             <span className="text-white/40 text-sm">₦</span>
             <span className={`text-2xl font-black tracking-tight ${suite.popular ? "text-worknub-green" : "text-white"}`}>
               {activeTier.price}
@@ -437,7 +437,7 @@ function CorporateSuiteCard({ suite, pricing, index }) {
               </li>
             ))}
           </ul>
-          <p className="text-white/35 text-[12px] leading-[1.6] border-t border-white/[0.06] pt-3">{suite.perks}</p>
+          <p className="text-white/35 text-[12px] leading-[1.6] border-t border-white/8 pt-3">{suite.perks}</p>
         </div>
 
         {/* Annual membership fee */}
@@ -547,7 +547,7 @@ function TopNav({ activeSection, scrollTo }) {
               <button 
                 key={id} 
                 onClick={() => scrollTo(id)}
-                className={`flex-shrink-0 text-center py-2.5 px-3 rounded-lg text-[12px] font-bold transition-all duration-200 whitespace-nowrap ${
+                className={`shrink-0 text-center py-2.5 px-3 rounded-lg text-[12px] font-bold transition-all duration-200 whitespace-nowrap ${
                   isActive 
                     ? 'bg-worknub-green text-white' 
                     : 'text-gray-500 hover:bg-gray-100'
@@ -609,11 +609,11 @@ export default function Pricing() {
             backgroundSize: "cover", backgroundPosition: "center",
           }}
         />
-        <div className="absolute inset-0 z-[1] bg-worknub-mint/70" />
-        <div className="absolute inset-0 z-[1]"
+        <div className="absolute inset-0 z-1 bg-worknub-mint/70" />
+        <div className="absolute inset-0 z-1"
           style={{ background: "radial-gradient(ellipse at center, transparent 50%, rgba(240,249,240,0.5) 100%)" }} />
 
-        <div className="container-custom relative z-[2] text-center">
+        <div className="container-custom relative z-2 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-worknub-dark mb-3 tracking-tight">
               Simple, Transparent Pricing

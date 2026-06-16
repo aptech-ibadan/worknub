@@ -66,7 +66,7 @@ export default function CalendarView() {
       <div className="relative">
         {/* Month headers */}
         <div className="flex border-b border-gray-200">
-          <div className="w-20 flex-shrink-0 border-r border-gray-200"></div>
+          <div className="w-20 shrink-0 border-r border-gray-200"></div>
           {months.map((month) => (
             <div key={month} className="flex-1 text-center py-3 text-sm text-gray-500">
               <button
@@ -85,7 +85,7 @@ export default function CalendarView() {
 
         {/* Days header */}
         <div className="flex border-b border-gray-200">
-          <div className="w-20 flex-shrink-0 border-r border-gray-200 bg-gray-50"></div>
+          <div className="w-20 shrink-0 border-r border-gray-200 bg-gray-50"></div>
           {days.map((day) => (
             <div key={day} className="flex-1 text-center py-2 text-sm text-gray-400 border-r border-gray-100 last:border-r-0">
               {day}

@@ -43,7 +43,7 @@ export default function PricingSection() {
                             <ul className="list-none p-0 m-0 mb-7 flex flex-col gap-2.5 h-[200px]">
                                 {plan.features.map((f, fi) => (
                                     <li key={fi} className="flex items-center gap-2.5 text-[13.5px] text-gray-700">
-                                        <span className="w-[18px] h-[18px] bg-worknub-green/[0.13] rounded-full flex items-center justify-center shrink-0">
+                                        <span className="w-[18px] h-[18px] bg-worknub-green/13 rounded-full flex items-center justify-center shrink-0">
                                             <FiCheck size={10} className="text-worknub-green" strokeWidth={3} />
                                         </span>
                                         <span className={`${plan.highlight ? "text-white" : "text-gray-700"}`}>

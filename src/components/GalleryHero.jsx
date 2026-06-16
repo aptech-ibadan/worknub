@@ -93,7 +93,7 @@ export default function GalleryHero() {
                 <div className="absolute inset-0 bg-worknub-dark/40 group-hover:bg-worknub-dark/50 transition-colors duration-300" />
 
                 {/* Green tint */}
-                <div className="absolute inset-0 bg-worknub-green/[0.06]" />
+                <div className="absolute inset-0 bg-worknub-green/6" />
 
                 {/* Play button */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -111,7 +111,7 @@ export default function GalleryHero() {
                 </div>
 
                 {/* Bottom label */}
-                <div className="absolute bottom-0 left-0 right-0 px-6 py-4 bg-gradient-to-t from-worknub-dark/80 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 px-6 py-4 bg-linear-to-t from-worknub-dark/80 to-transparent">
                   <p className="text-white font-bold text-sm">Watch the Tour</p>
                   <p className="text-white/60 text-xs mt-0.5">See Worknub in action</p>
                 </div>
@@ -136,14 +136,14 @@ export default function GalleryHero() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10"
+            className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-10"
             style={{ background: "rgba(0,0,0,0.92)" }}
             onClick={() => setModalOpen(false)}
           >
             {/* Close button */}
             <button
               onClick={() => setModalOpen(false)}
-              className="absolute top-5 right-5 w-10 h-10 bg-white/[0.08] border border-white/[0.15] rounded-xl flex items-center justify-center text-white hover:bg-white/[0.15] transition-colors z-10"
+              className="absolute top-5 right-5 w-10 h-10 bg-white/8 border border-white/15 rounded-xl flex items-center justify-center text-white hover:bg-white/15 transition-colors z-10"
             >
               <FiX size={18} />
             </button>
@@ -158,7 +158,7 @@ export default function GalleryHero() {
               onClick={e => e.stopPropagation()}
             >
               {/* Top border accent */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green/40 to-transparent rounded-t-2xl" />
+              <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-worknub-green/40 to-transparent rounded-t-2xl" />
 
               <div className="rounded-2xl overflow-hidden bg-[#111] shadow-2xl">
                 <video

@@ -96,13 +96,13 @@ export default function AmenitiesSection() {
 
       {/* Animated Border Accents */}
       <motion.div 
-        className="absolute top-0 left-0 w-48 h-px bg-gradient-to-r from-transparent via-worknub-green to-transparent"
+        className="absolute top-0 left-0 w-48 h-px bg-linear-to-r from-transparent via-worknub-green to-transparent"
         animate={{ x: ['0%', '100%', '0%'] }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
         style={{ width: '25%' }}
       />
       <motion.div 
-        className="absolute bottom-0 right-0 w-48 h-px bg-gradient-to-l from-transparent via-worknub-green to-transparent"
+        className="absolute bottom-0 right-0 w-48 h-px bg-linear-to-l from-transparent via-worknub-green to-transparent"
         animate={{ x: ['0%', '-100%', '0%'] }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear", delay: 6 }}
         style={{ width: '25%' }}
@@ -120,7 +120,7 @@ export default function AmenitiesSection() {
             Everything You Need, Nothing You Don't
             {/* Animated underline glow */}
             <motion.div 
-              className="absolute -bottom-2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green to-transparent"
+              className="absolute -bottom-2 left-0 right-0 h-px bg-linear-to-r from-transparent via-worknub-green to-transparent"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 0.8 }}
@@ -147,11 +147,11 @@ export default function AmenitiesSection() {
                 className="group relative bg-[#1c1c1c] border border-[#2a2a2a] rounded-2xl p-7 transition-all duration-300 hover:border-worknub-green/40 hover:shadow-xl hover:shadow-worknub-green/5 overflow-hidden"
               >
                 {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-worknub-green/0 to-worknub-green/0 group-hover:from-worknub-green/5 group-hover:to-transparent transition-all duration-500" />
+                <div className="absolute inset-0 bg-linear-to-br from-worknub-green/0 to-worknub-green/0 group-hover:from-worknub-green/5 group-hover:to-transparent transition-all duration-500" />
                 
                 {/* Icon container with hover animation */}
                 <motion.div 
-                  className="w-11 h-11 bg-worknub-green/[0.13] rounded-[10px] flex items-center justify-center mb-3.5 relative transition-all duration-300 group-hover:scale-105 group-hover:bg-worknub-green/[0.2]"
+                  className="w-11 h-11 bg-worknub-green/13 rounded-[10px] flex items-center justify-center mb-3.5 relative transition-all duration-300 group-hover:scale-105 group-hover:bg-worknub-green/20"
                 >
                   <Icon size={20} className="text-worknub-green" />
                 </motion.div>

@@ -77,7 +77,7 @@ function RateCard({ icon: Icon, badge, badgeColor, iconBg, accentText, borderAcc
       <div className={`${iconBg} px-5 sm:px-8 pt-6 sm:pt-8 pb-5 sm:pb-7 relative`}>
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <span className={`inline-block text-[11px] font-black tracking-[0.1em] uppercase px-3 py-1.5 rounded-full text-white mb-3 sm:mb-4 ${badgeColor}`}>
+            <span className={`inline-block text-[11px] font-black tracking-widest uppercase px-3 py-1.5 rounded-full text-white mb-3 sm:mb-4 ${badgeColor}`}>
               {badge}
             </span>
             <div className="flex items-center gap-2 sm:gap-3 mb-1">
@@ -170,13 +170,13 @@ export default function Offer() {
             backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat",
           }}
         />
-        <div className="absolute inset-0 z-[1] bg-worknub-mint/70 pointer-events-none" />
-        <div className="absolute inset-0 z-[1] pointer-events-none"
+        <div className="absolute inset-0 z-1 bg-worknub-mint/70 pointer-events-none" />
+        <div className="absolute inset-0 z-1 pointer-events-none"
           style={{ background: "radial-gradient(ellipse at center, transparent 50%, rgba(240,249,240,0.5) 100%)" }}
         />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green/30 to-transparent z-[2]" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-worknub-green/30 to-transparent z-2" />
 
-        <div className="container-custom relative z-[3] pt-16 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
+        <div className="container-custom relative z-3 pt-16 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
             {/* LEFT */}
@@ -403,16 +403,16 @@ export default function Offer() {
             <p className="text-white/50 text-[14px] sm:text-[15px] max-w-md mx-auto">No forms. No waiting. Just show up with your ID.</p>
           </div>
           <div className="grid sm:grid-cols-3 gap-4 sm:gap-5 relative">
-            <div className="hidden sm:block absolute top-11 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-gradient-to-r from-worknub-green/15 via-worknub-green/50 to-worknub-green/15" />
+            <div className="hidden sm:block absolute top-11 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-linear-to-r from-worknub-green/15 via-worknub-green/50 to-worknub-green/15" />
             {steps.map(({ number, icon: Icon, title, desc }, i) => (
               <motion.div key={number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
                 viewport={{ once: true }}
-                className="bg-white/[0.04] border border-white/[0.08] rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:bg-white/[0.07] transition-colors duration-300 relative overflow-hidden"
+                className="bg-white/4 border border-white/8 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:bg-white/7 transition-colors duration-300 relative overflow-hidden"
               >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-worknub-green/50 to-transparent" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-linear-to-r from-transparent via-worknub-green/50 to-transparent" />
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-5 sm:mb-6">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 bg-worknub-green rounded-full flex items-center justify-center"
                     style={{ boxShadow: '0 8px 32px rgba(76,175,80,0.35)' }}>
@@ -524,7 +524,7 @@ export default function Offer() {
 
                   {/* What's included */}
                   <div>
-                    <p className="text-[10px] font-black tracking-[0.1em] uppercase text-gray-400 mb-3">What's included</p>
+                    <p className="text-[10px] font-black tracking-widest uppercase text-gray-400 mb-3">What's included</p>
                     <div className="space-y-2">
                       {pkg.includes.map(({ label, qty }) => (
                         <div key={label} className={`flex items-center justify-between px-3 sm:px-4 py-2.5 rounded-xl ${pkg.accentBg} border ${pkg.accentBorder}`}>
@@ -605,7 +605,7 @@ export default function Offer() {
           >
             <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none"
               style={{ background: 'radial-gradient(circle, rgba(76,175,80,0.1) 0%, transparent 70%)', transform: 'translate(20%,-40%)' }} />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green/30 to-transparent" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-worknub-green/30 to-transparent" />
             <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 sm:gap-10">
               <div className="max-w-lg">
                 <div className="flex items-center gap-2.5 mb-4">
@@ -624,7 +624,7 @@ export default function Offer() {
                   Get in Touch <FiArrowRight size={15} />
                 </Link>
                 <Link href="/pricing"
-                  className="inline-flex items-center justify-center gap-2 border border-white/15 text-white/80 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm hover:bg-white/[0.05] transition-colors whitespace-nowrap">
+                  className="inline-flex items-center justify-center gap-2 border border-white/15 text-white/80 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm hover:bg-white/5 transition-colors whitespace-nowrap">
                   View Full Pricing
                 </Link>
               </div>

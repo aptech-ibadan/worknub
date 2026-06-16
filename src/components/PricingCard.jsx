@@ -29,7 +29,7 @@ export default function PricingCard({ plan, isPopular = false }) {
 
       {/* Header */}
       <div className="px-7 pt-7 pb-5">
-        <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-gray-400 mb-1">{plan.period}</p>
+        <p className="text-[11px] font-bold tracking-widest uppercase text-gray-400 mb-1">{plan.period}</p>
         <h3 className="text-xl font-extrabold text-worknub-dark tracking-[-0.01em]">{plan.name}</h3>
         {plan.description && (
           <p className="text-gray-500 text-[13px] mt-1.5 leading-[1.6]">{plan.description}</p>

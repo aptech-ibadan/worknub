@@ -193,7 +193,7 @@ export default function Blogs() {
               style={{ background: 'radial-gradient(circle, rgba(76,175,80,0.12) 0%, transparent 70%)', transform: 'translate(20%,-40%)' }} />
             <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full pointer-events-none"
               style={{ background: 'radial-gradient(circle, rgba(245,124,0,0.07) 0%, transparent 70%)', transform: 'translate(-20%,40%)' }} />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-worknub-green/30 to-transparent" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-worknub-green/30 to-transparent" />
 
             <div className="relative flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="max-w-md">

@@ -120,9 +120,9 @@ function FeaturedCard({ space, index }) {
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           style={{ position: 'absolute', inset: 0 }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end p-8 translate-y-0">
-          <span className={`inline-block text-[11px] font-bold tracking-[0.1em] uppercase px-3 py-1.5 rounded-full mb-4 w-fit ${space.tagBg}`}>
+          <span className={`inline-block text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4 w-fit ${space.tagBg}`}>
             {space.tag}
           </span>
           <h3 className="text-white text-2xl font-extrabold tracking-[-0.02em] mb-1">{space.name}</h3>
@@ -155,7 +155,7 @@ function FeaturedCard({ space, index }) {
           <p className="text-gray-500 text-[14px] md:text-[15px] leading-[1.75] mb-6 md:mb-8">
             {space.description}
           </p>
-          <p className="text-xs font-bold tracking-[0.1em] uppercase text-gray-400 mb-3 md:mb-4">What's included</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3 md:mb-4">What's included</p>
           <ul className="space-y-2.5 md:space-y-3 mb-6 md:mb-8">
             {space.features.map((f, i) => (
               <li key={i} className="flex items-center gap-3 text-gray-700 text-[13px] md:text-[14px]">
@@ -207,8 +207,8 @@ function SmallCard({ space, index }) {
           alt={space.name}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        <span className={`absolute top-4 left-4 text-[11px] font-bold tracking-[0.06em] uppercase px-2.5 py-1 rounded-lg ${space.tagBg}`}>
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
+        <span className={`absolute top-4 left-4 text-[11px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-lg ${space.tagBg}`}>
           {space.tag}
         </span>
         <div className="absolute inset-0 bg-worknub-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 px-6">
@@ -370,8 +370,8 @@ export default function Spaces() {
             viewport={{ once: true }}
             className="bg-worknub-dark rounded-3xl px-10 py-14 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-worknub-green/[0.07] rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none" />
-            <div className="absolute bottom-0 left-20 w-40 h-40 bg-worknub-orange/[0.06] rounded-full translate-y-1/2 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-worknub-green/7 rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+            <div className="absolute bottom-0 left-20 w-40 h-40 bg-worknub-orange/6 rounded-full translate-y-1/2 pointer-events-none" />
             <div className="relative">
               <p className="text-worknub-green text-xs font-bold tracking-[0.12em] uppercase mb-3">Can't Decide?</p>
               <h2 className="text-white text-3xl md:text-4xl font-extrabold tracking-[-0.02em] leading-tight mb-3">
