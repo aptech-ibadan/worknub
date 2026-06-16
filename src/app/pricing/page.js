@@ -1,8 +1,8 @@
 "use client";
 import PricingCard from '../../components/PricingCard';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { FiUsers, FiBriefcase, FiHome, FiMonitor, FiCalendar, FiCheck, FiArrowRight } from 'react-icons/fi';
+import { useState, useEffect } from 'react';
+import { FiUsers, FiBriefcase, FiHome, FiMonitor, FiCalendar, FiCheck, FiArrowRight, FiVideo } from 'react-icons/fi';
 import Link from 'next/link';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -114,8 +114,41 @@ const spaceCategories = [
       ],
     },
   },
+  {
+    id: "content-room",
+    label: "Content Room",
+    icon: FiVideo,
+    description: "Professional content creation space for podcasters and video creators",
+    bg: "bg-worknub-mint",
+    features: ["Soundproof room", "Air conditioning", "Aesthetic space design", "Large screen display", "Professional lighting"],
+    plans: {
+      member: [
+        { name: "Hourly", price: "16,200", period: "hour" },
+        {
+          name: "Bundle", period: "bundle",
+          tiers: [
+            { type: "5 hours",  price: "72,900" },
+            { type: "10 hours", price: "137,700" },
+            { type: "20 hours", price: "259,200" },
+          ],
+        },
+      ],
+      nonMember: [
+        { name: "Hourly", price: "16,200", period: "hour" },
+        {
+          name: "Bundle", period: "bundle",
+          tiers: [
+            { type: "5 hours",  price: "72,900" },
+            { type: "10 hours", price: "137,700" },
+            { type: "20 hours", price: "259,200" },
+          ],
+        },
+      ],
+    },
+  },
 ];
 
+// Single-price spaces (Meeting Room and Event Space)
 const singleSpaces = [
   {
     id: "meeting-room",
@@ -170,7 +203,6 @@ const discounts = [
     ],
   },
 ];
-
 
 const corporateSuites = [
   {
@@ -227,6 +259,19 @@ const corporateSuites = [
       nonMember: { monthly: "1,872,000", tiers: [{ type: "3 months", price: "5,616,000"  }, { type: "6 months", price: "11,232,000" }, { type: "12 months", price: "22,464,000" }] },
     },
   },
+];
+
+// ─── NAV ITEMS ──────────────────────────────────────────────────────────────
+
+const navItems = [
+  { id: 'hot-desk', label: 'Hot Desk', short: 'Hot Desk' },
+  { id: 'private-desk', label: 'Private Desk', short: 'Private Desk' },
+  { id: 'private-office', label: 'Private Office', short: 'Private Office' },
+  { id: 'content-room', label: 'Content Room', short: 'Content Room' },
+  { id: 'meeting-room-section', label: 'Meeting Room', short: 'Meeting Room' },
+  { id: 'event-space-section', label: 'Event Space', short: 'Event Space' },
+  { id: 'corporate-suites', label: 'Corporate Suites', short: 'Corporate' },
+  { id: 'student-discounts', label: 'Student & Corp', short: 'Student / Corper' },
 ];
 
 // ─── COMPONENTS ──────────────────────────────────────────────────────────────
@@ -310,7 +355,6 @@ function FeatureStrip({ features }) {
   );
 }
 
-
 function CorporateSuiteCard({ suite, pricing, index }) {
   const [selected, setSelected] = useState(0);
   const activeTier = pricing.tiers[selected];
@@ -319,7 +363,7 @@ function CorporateSuiteCard({ suite, pricing, index }) {
     <motion.div
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.55, delay: index * 0.1 }}
       viewport={{ once: true }}
       className={`relative flex flex-col rounded-3xl overflow-hidden border-2 transition-all duration-300 hover:scale-[1.02] ${
         suite.popular
@@ -490,11 +534,69 @@ function SingleSpaceCard({ space, isMember }) {
   );
 }
 
+// ─── TOP NAV ────────────────────────────────────────────────────────────────
+
+function TopNav({ activeSection, scrollTo }) {
+  return (
+    <div className="sticky top-14 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+      <div className="container-custom">
+        <div className="flex gap-1 py-2 overflow-x-auto scrollbar-hide lg:justify-center">
+          {navItems.map(({ id, short }) => {
+            const isActive = activeSection === id;
+            return (
+              <button 
+                key={id} 
+                onClick={() => scrollTo(id)}
+                className={`flex-shrink-0 text-center py-2.5 px-3 rounded-lg text-[12px] font-bold transition-all duration-200 whitespace-nowrap ${
+                  isActive 
+                    ? 'bg-worknub-green text-white' 
+                    : 'text-gray-500 hover:bg-gray-100'
+                }`}
+              >
+                {short}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
 export default function Pricing() {
   const [memberType, setMemberType] = useState('member');
+  const [activeSection, setActiveSection] = useState('hot-desk');
   const isMember = memberType === 'member';
+
+  // ── SCROLL SPY ──
+  useEffect(() => {
+    function onScroll() {
+      const sections = navItems.map(({ id }) => {
+        const el = document.getElementById(id);
+        if (!el) return { id, top: Infinity };
+        return { id, top: el.getBoundingClientRect().top };
+      });
+      const windowH = window.innerHeight;
+      const visible = sections.filter(s => s.top < windowH * 0.6);
+      if (visible.length === 0) return;
+      const active = visible.reduce((prev, curr) => curr.top > prev.top ? curr : prev);
+      setActiveSection(active.id);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  function scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Get the first two spaces for Meeting Room and Event Space sections
+  const meetingRoom = singleSpaces[0];
+  const eventSpace = singleSpaces[1];
 
   return (
     <>
@@ -523,8 +625,8 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* ── STICKY TOGGLE ── */}
-      <div className="sticky top-0 z-30 bg-white border-b border-gray-100 shadow-sm">
+      {/* ── MEMBER/STANDARD TOGGLE (scrollable) ── */}
+      <div className="bg-white border-b border-gray-100 shadow-sm">
         <div className="container-custom py-3 flex items-center justify-center gap-3">
           {[
             { id: 'member',    label: '🏆 Member Rates' },
@@ -550,9 +652,12 @@ export default function Pricing() {
         </div>
       </div>
 
+      {/* ── TOP NAV (Spaces only - sticky) ── */}
+      <TopNav activeSection={activeSection} scrollTo={scrollTo} />
+
       {/* ── SPACE CATEGORIES ── */}
       {spaceCategories.map((cat) => (
-        <section key={cat.id} className={`py-14 sm:py-20 ${cat.bg}`}>
+        <section key={cat.id} id={cat.id} className={`py-14 sm:py-20 ${cat.bg}`}>
           <div className="container-custom">
             <SectionHeader label={cat.label} description={cat.description} />
             <FeatureStrip features={cat.features} />
@@ -574,23 +679,34 @@ export default function Pricing() {
         </section>
       ))}
 
-      {/* ── SINGLE-PRICE SPACES ── */}
-      <section className="py-14 sm:py-20 bg-worknub-mint">
+      {/* ── MEETING ROOM ── */}
+      <section id="meeting-room-section" className="py-14 sm:py-20 bg-worknub-mint">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-10">
-            {singleSpaces.map((space) => (
-              <div key={space.id}>
-                <SectionHeader label={space.label} description={space.description} />
-                <SingleSpaceCard space={space} isMember={isMember} />
-              </div>
-            ))}
+          <SectionHeader 
+            label={meetingRoom.label} 
+            description={meetingRoom.description} 
+          />
+          <div className="max-w-2xl">
+            <SingleSpaceCard space={meetingRoom} isMember={isMember} />
           </div>
         </div>
       </section>
 
+      {/* ── EVENT SPACE ── */}
+      <section id="event-space-section" className="py-14 sm:py-20 bg-white">
+        <div className="container-custom">
+          <SectionHeader 
+            label={eventSpace.label} 
+            description={eventSpace.description} 
+          />
+          <div className="max-w-2xl">
+            <SingleSpaceCard space={eventSpace} isMember={isMember} />
+          </div>
+        </div>
+      </section>
 
       {/* ── CORPORATE SUITES ── */}
-      <section className="py-14 sm:py-20 bg-[#0c1a12] relative overflow-hidden">
+      <section id="corporate-suites" className="py-14 sm:py-20 bg-[#0c1a12] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
         <div className="container-custom relative">
@@ -620,7 +736,7 @@ export default function Pricing() {
       </section>
 
       {/* ── STUDENT & CORP DISCOUNTS ── */}
-      <section className="py-14 sm:py-20 bg-white">
+      <section id="student-discounts" className="py-14 sm:py-20 bg-white">
         <div className="container-custom">
           <SectionHeader
             label="Student & Corp Member Discounts"

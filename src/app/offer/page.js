@@ -281,7 +281,7 @@ export default function Offer() {
                 <p className="text-worknub-dark text-xl font-black tracking-[-0.02em]">120+</p>
                 <p className="text-gray-400 text-[11px] font-medium mt-0.5">Active members</p>
               </div>
-              <div className="absolute -right-10 top-8 bg-white border border-gray-200 shadow-lg rounded-2xl px-5 py-3.5">
+              <div className="absolute -right-10 top-20 bg-white border border-gray-200 shadow-lg rounded-2xl px-5 py-3.5">
                 <p className="text-worknub-dark text-xl font-black tracking-[-0.02em]">5.0★</p>
                 <p className="text-gray-400 text-[11px] font-medium mt-0.5">Member rating</p>
               </div>
