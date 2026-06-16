@@ -52,7 +52,7 @@ export default function ScrollEffects() {
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-white text-worknub-green border border-gray-150 flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.18)] cursor-pointer z-40 transition-shadow duration-300"
+            className="fixed bottom-20 right-5 w-12 h-12 rounded-full bg-white text-worknub-green border border-gray-150 flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.18)] cursor-pointer z-40 transition-shadow duration-300"
             aria-label="Back to top"
           >
             <FiArrowUp size={20} strokeWidth={2.5} />
