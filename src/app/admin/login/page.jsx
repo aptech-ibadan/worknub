@@ -23,14 +23,28 @@ export default function AdminLogin() {
         body: JSON.stringify({ username, password }),
       });
 
-      const data = await res.json();
+      // ✅ Improved error handling for non-JSON responses
+      let data;
+      try {
+        data = await res.json();
+      } catch {
+        // If response is not JSON, use status text
+        throw new Error(res.statusText || 'Login failed');
+      }
+
       if (!res.ok) {
         throw new Error(data.error || 'Login failed');
       }
 
-      router.push('/admin/dashboard');
+      // ✅ Check if login was successful
+      if (data.success) {
+        router.push('/admin/dashboard');
+      } else {
+        throw new Error(data.error || 'Login failed');
+      }
     } catch (err) {
-      setError(err.message);
+      console.error('Login error:', err);
+      setError(err.message || 'An unexpected error occurred');
     } finally {
       setLoading(false);
     }
