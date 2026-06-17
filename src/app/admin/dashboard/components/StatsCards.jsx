@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { FiUsers, FiCalendar, FiMoney, FiStar } from "react-icons/fi";
 import { BsCashStack } from 'react-icons/bs'
 const stats = [
-  { label: "Total Guests", value: "1,234", icon: FiUsers, change: "+12%", color: "text-blue-600" },
-  { label: "Bookings Today", value: "45", icon: FiCalendar, change: "+8%", color: "text-green-600" },
-  { label: "Revenue (MTD)", value: "₦12,456", icon: BsCashStack, change: "+23%", color: "text-purple-600" },
+  { label: "Total Guests", value: "12", icon: FiUsers, change: "+12%", color: "text-blue-600" },
+  { label: "Bookings Today", value: "2", icon: FiCalendar, change: "+8%", color: "text-green-600" },
+  { label: "Revenue (MTD)", value: "₦20,000", icon: BsCashStack, change: "+23%", color: "text-purple-600" },
   { label: "Avg Rating", value: "4.8", icon: FiStar, change: "+0.2", color: "text-yellow-600" },
 ];
 

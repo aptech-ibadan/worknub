@@ -106,7 +106,7 @@ export const plans = [
     naira: "5,700",
     period: "/ day",
     description: "Flexible open seating, ideal for remote workers & students.",
-    features: ["Flexible daily access", " Ergonomics chair", "High-speed WiFi", "Networking opportunities"],
+    features: ["Flexible daily access", " Serene space", "High-speed WiFi", "Networking opportunities"],
     highlight: false,
   },
   {

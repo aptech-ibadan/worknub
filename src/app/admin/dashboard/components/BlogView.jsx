@@ -235,7 +235,7 @@ export default function BlogView() {
   const inputCls = "mt-1.5 w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-worknub-green focus:ring-2 focus:ring-worknub-green/15 transition-shadow bg-white";
 
   return (
-    <div className="px-3 sm:px-4 py-4 sm:py-5 max-w-[860px] mx-auto">
+    <div className="px-0 sm:px-4 py-4 sm:py-5  mx-auto">
 
       <Toast message={message} type={messageType} onClose={() => setMessage('')} />
 

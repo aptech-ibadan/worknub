@@ -14,7 +14,7 @@ const spaceCategories = [
     icon: FiUsers,
     description: "Flexible workspace in our shared area",
     bg: "bg-white",
-    features: ["Flexible daily access", "Ergonomic chair", "High-speed WiFi", "Networking opportunities"],
+    features: ["Flexible daily access", "Serene space", "High-speed WiFi", "Networking opportunities"],
     plans: {
       member: [
         { name: "Daily",   price: "3,800",   period: "day"   },
@@ -253,7 +253,7 @@ const corporateSuites = [
       { space: "Private Desk",   qty: 4 },
       { space: "Hot Desk",       qty: 4 },
     ],
-    perks: "WiFi, coffee, printing, CCTV,branding, 2hrs meeting room per month & business address for all team members.",
+    perks: "WiFi, coffee, printing, CCTV, branding, 2hrs meeting room per month & business address for all team members.",
     pricing: {
       member:    { monthly: "1,248,000", tiers: [{ type: "3 months", price: "3,724,000"  }, { type: "6 months", price: "7,448,000"  }, { type: "12 months", price: "14,896,000" }] },
       nonMember: { monthly: "1,872,000", tiers: [{ type: "3 months", price: "5,616,000"  }, { type: "6 months", price: "11,232,000" }, { type: "12 months", price: "22,464,000" }] },

@@ -39,14 +39,32 @@ export default function BookingModal({ isOpen, onClose }) {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Space Type</label>
                 <select className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-worknub-green focus:ring-1 focus:ring-worknub-green">
-                  <option>Open space</option>
+                  <option>Hot desk</option>
+                  <option>Private desk</option>
                   <option>Private office</option>
                   <option>Meeting room</option>
                   <option>Event space</option>
+                  <option>Content Room</option>
+                  <option>Corporate suite prime</option>
+                  <option>Corporate suite momentum</option>
+                  <option>Corporate suite elite</option>
+                  
                 </select>
               </div>
 
-              <div>
+               <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Select Offer Type</label>
+                <select className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-worknub-green focus:ring-1 focus:ring-worknub-green">
+                  <option>Membership</option>
+                  <option>Non Member</option>
+                  <option>Student</option>
+                  <option>Corper</option>
+                 
+                  
+                </select>
+              </div>
+
+                  <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Plan Type</label>
                 <select className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-worknub-green focus:ring-1 focus:ring-worknub-green">
                   <option>Daily</option>
@@ -56,16 +74,26 @@ export default function BookingModal({ isOpen, onClose }) {
                 </select>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+
+                <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
                   <input type="date" className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-worknub-green focus:ring-1 focus:ring-worknub-green" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Check Out</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">End Date</label>
                   <input type="date" className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-worknub-green focus:ring-1 focus:ring-worknub-green" />
                 </div>
               </div>
+
+               <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Booking Price</label>
+               <input type="text" className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-worknub-green focus:ring-1 focus:ring-worknub-green" placeholder="Enter guest name" />
+              </div>
+
+          
+
+            
 
               <button className="w-full bg-worknub-green text-white py-2.5 rounded-lg font-medium hover:bg-worknub-dark transition-colors">
                 Confirm Booking
