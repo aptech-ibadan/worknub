@@ -13,14 +13,14 @@ export default function BookingModal({ isOpen, onClose }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center  justify-center p-4 bg-black/50 backdrop-blur-sm"
           onClick={onClose}
         >
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
-            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6"
+            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6  h-full overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-6">
@@ -30,11 +30,24 @@ export default function BookingModal({ isOpen, onClose }) {
               </button>
             </div>
 
-            <form className="space-y-4">
+            <form className="space-y-6 h-[80%] overflow-y-scroll">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">User Name</label>
                 <input type="text" className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-worknub-green focus:ring-1 focus:ring-worknub-green" placeholder="Enter guest name" />
               </div>
+               <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input type="email" className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-worknub-green focus:ring-1 focus:ring-worknub-green" placeholder="Enter guest name" />
+              </div>
+
+               <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <input type="tel" className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-worknub-green focus:ring-1 focus:ring-worknub-green" placeholder="Enter guest name" />
+              </div>
+
+
+
+
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Space Type</label>

@@ -16,8 +16,7 @@ const menuItems = [
     { id: "offers", label: "Offers", icon: FiGift },
     { id: "membership", label: "Membership", icon: FiAward },
     { id: "spaces", label: "Spaces", icon: FiKey },
-    { id: "deals", label: "Deals", icon: FiTag },
-    { id: "rates", label: "Rate", icon: BsCashStack },
+    // { id: "rates", label: "Rate", icon: BsCashStack },
     { id: "revenue", label: "Revenue", icon: FiTrendingUp },
 
 ];
