@@ -294,7 +294,7 @@ export default function BlogDetailPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="container-custom max-w-4xl pt-8"
         >
-          <div className={`rounded-3xl overflow-hidden h-48 sm:h-64 bg-gradient-to-br ${
+          <div className={`rounded-3xl overflow-hidden h-48 sm:h-64 bg-linear-to-br ${
             blog.category === 'Trends' ? 'from-worknub-orange/20 to-worknub-orange/5' :
             blog.category === 'Networking' ? 'from-worknub-teal/20 to-worknub-teal/5' :
             blog.category === 'Future of Work' ? 'from-[#7c3aed]/20 to-[#7c3aed]/5' :
@@ -398,7 +398,7 @@ export default function BlogDetailPage() {
                             {otherSrc ? (
                               <img src={otherSrc} alt={other.title} className="w-full h-full object-cover" />
                             ) : (
-                              <div className={`w-full h-full bg-gradient-to-br ${
+                              <div className={`w-full h-full bg-linear-to-br ${
                                 other.category === 'Trends'         ? 'from-worknub-orange/20 to-worknub-orange/5' :
                                 other.category === 'Networking'     ? 'from-worknub-teal/20 to-worknub-teal/5' :
                                 other.category === 'Future of Work' ? 'from-[#7c3aed]/20 to-[#7c3aed]/5' :
@@ -475,7 +475,7 @@ export default function BlogDetailPage() {
                       {otherSrc ? (
                         <img src={otherSrc} alt={other.title} className="w-full h-full object-cover" />
                       ) : (
-                        <div className={`w-full h-full bg-gradient-to-br ${
+                        <div className={`w-full h-full bg-linear-to-br ${
                           other.category === 'Trends'         ? 'from-worknub-orange/20 to-worknub-orange/5' :
                           other.category === 'Networking'     ? 'from-worknub-teal/20 to-worknub-teal/5' :
                           other.category === 'Future of Work' ? 'from-[#7c3aed]/20 to-[#7c3aed]/5' :

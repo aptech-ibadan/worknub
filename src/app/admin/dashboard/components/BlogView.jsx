@@ -52,7 +52,7 @@ function BlogImage({ blog, className = "w-full h-full object-cover" }) {
 
   if (!src || error) {
     return (
-      <div className="w-full h-full bg-gradient-to-br from-worknub-green/10 to-worknub-mint flex flex-col items-center justify-center gap-1.5">
+      <div className="w-full h-full bg-linear-to-br from-worknub-green/10 to-worknub-mint flex flex-col items-center justify-center gap-1.5">
         <FiImage className="text-worknub-green/50" size={24} />
         <span className="text-[10px] text-gray-400 font-medium">No image</span>
       </div>
@@ -70,7 +70,7 @@ function CategoryBadge({ category }) {
     'Announcements':  'bg-red-50 text-red-600 border-red-100',
   };
   return (
-    <span className={`inline-flex items-center gap-1 text-[11px] font-bold tracking-[0.05em] uppercase px-2.5 py-1 rounded-full border ${colors[category] || 'bg-gray-100 text-gray-500 border-gray-200'}`}>
+    <span className={`inline-flex items-center gap-1 text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full border ${colors[category] || 'bg-gray-100 text-gray-500 border-gray-200'}`}>
       <FiTag size={9} />
       {category}
     </span>

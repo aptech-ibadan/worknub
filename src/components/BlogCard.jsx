@@ -51,7 +51,7 @@ function CardImage({ blog, className, colors }) {
 
   /* Fallback gradient placeholder */
   return (
-    <div className={`${className} bg-gradient-to-br ${colors.gradient} flex items-center justify-center relative overflow-hidden`}>
+    <div className={`${className} bg-linear-to-br ${colors.gradient} flex items-center justify-center relative overflow-hidden`}>
       <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full border border-current opacity-10" />
       <span className={`text-6xl font-black opacity-[0.07] select-none ${colors.pill.split(' ')[1]}`}>
         {blog.category?.[0] || '?'}
