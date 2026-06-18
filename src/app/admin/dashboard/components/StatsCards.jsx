@@ -29,7 +29,7 @@ export default function StatsCards() {
                 <p className="text-2xl font-bold text-gray-900 mt-1">{stat.value}</p>
                 <p className="text-xs text-green-600 mt-1">{stat.change} from last month</p>
               </div>
-              <div className={`p-3 rounded-lg bg-opacity-10 ${stat.color.replace('text-', 'bg-')}`}>
+              <div className={`p-3 rounded-lg`}>
                 <Icon className={stat.color} size={24} />
               </div>
             </div>
