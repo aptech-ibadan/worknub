@@ -32,7 +32,7 @@ export default function Header({ onBookNow }) {
           
           <button className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">
             <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-              <img src="/avatar-placeholder.jpg" alt="User" className="w-full h-full object-cover" />
+              <img src="https://res.cloudinary.com/ddldviftf/image/upload/v1780995846/icon_ofgur9.png" alt="User" className="w-full h-full object-cover" />
             </div>
           </button>
 

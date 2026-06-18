@@ -133,7 +133,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {supportLinks.map(({ name, path }) => (
-                <li key={path}>
+                <li key={name}>
                   <Link
                     href={path}
                     className="text-gray-500 text-[13.5px] hover:text-worknub-green transition-colors flex items-center gap-1.5 group"

@@ -11,7 +11,7 @@ const spaces = [
     name: "Hot Desk",
     description: "Flexible workspace in our shared area. Perfect for freelancers and remote workers who want energy, community, and zero commitment.",
     icon: FiUsers,
-    features: ["Flexible daily access", "Ergonomics chair", "High-speed WiFi", "Networking opportunities"],
+    features: ["Flexible daily access", "Serene space", "High-speed WiFi", "Networking opportunities"],
     price: "₦5,700",
     period: "/ day",
     popular: true,

@@ -67,7 +67,7 @@ const tiers = [
   { name: "Corporate Suite (PRIME)", price: "80,000", icon: FiStar,      popular: false },
   { name: "Corporate Suite (MOMENTUM)", price: "120,000", icon: FiStar, 
          popular: false },
-  { name: "Corporate Suite (ELITE)", price: "200,000", icon: FiStar, 
+  { name: "Corporate Suite (ELITE)", price: "160,000", icon: FiStar, 
          popular: false },
 
 ];
