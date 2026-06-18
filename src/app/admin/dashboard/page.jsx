@@ -10,7 +10,6 @@ import StatsCards from "./components/StatsCards";
 import BookingModal from "./components/BookingModal";
 import BlogView from "./components/BlogView"; // ← Import BlogView
 import DashboardView from "./components/DashboardView";
-import GuestsView from "./components/UsersView";
 import SpacesView from "./components/SpacesView";
 import OffersView from "./components/OffersView";
 import RatesView from "./components/RatesView";
