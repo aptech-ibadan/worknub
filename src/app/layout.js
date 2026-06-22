@@ -16,12 +16,8 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
-      <head />
-      <body className="font-sans antialiased">
-        <LayoutWrapper>{children}</LayoutWrapper>
-
-        {/* Google Analytics */}
-        <Script
+      <head>
+         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
@@ -33,6 +29,12 @@ export default function RootLayout({ children }) {
             gtag('config', '${GA_ID}');
           `}
         </Script>
+      </head>
+      <body className="font-sans antialiased">
+        <LayoutWrapper>{children}</LayoutWrapper>
+
+        {/* Google Analytics */}
+       
 
         {/* Chatbase */}
         {chatbaseId && (
