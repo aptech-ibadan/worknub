@@ -86,7 +86,7 @@ export default function GalleryHero() {
                   muted
                   playsInline
                   preload="metadata"
-                  src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mov"
+                  src="https://res.cloudinary.com/ddldviftf/video/upload/v1782134511/worknubtour_bswods.mov"
                 />
 
                 {/* Dark overlay */}
@@ -166,10 +166,10 @@ export default function GalleryHero() {
                   muted
                   playsInline
                   className="w-full max-h-[75vh]"
-                  src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mov"
+                  src="https://res.cloudinary.com/ddldviftf/video/upload/v1782134511/worknubtour_bswods.mov"
                 >
-                  <source src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mov" type="video/mp4" />
-                  <source src="https://res.cloudinary.com/ddldviftf/video/upload/v1781003871/hero-worknub_ib5x3h.mov" type="video/quicktime" />
+                  <source src="https://res.cloudinary.com/ddldviftf/video/upload/v1782134511/worknubtour_bswods.mov" type="video/mp4" />
+                  <source src="https://res.cloudinary.com/ddldviftf/video/upload/v1782134511/worknubtour_bswods.mov" type="video/quicktime" />
                 </video>
                 <div className="px-6 py-4 flex items-center justify-between">
                   <div>
