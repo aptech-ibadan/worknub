@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.variable}>
       <head>
          <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-NYBH8JDSSR`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
